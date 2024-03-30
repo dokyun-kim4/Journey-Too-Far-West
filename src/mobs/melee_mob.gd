@@ -1,8 +1,8 @@
 extends CharacterBody2D
-
+signal mob_dead
 var health = 3
 
-@onready var player = get_node("/root/main/Player")
+@onready var player = get_node("/root/brooklyn/Player")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -18,3 +18,4 @@ func take_damage():
 		var explode = EXPLOSION.instantiate()
 		get_parent().add_child(explode)
 		explode.global_position = global_position
+		mob_dead.emit()

@@ -1,36 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8xx7oclrtebh"]
+[gd_scene load_steps=7 format=3 uid="uid://c8xx7oclrtebh"]
 
 [ext_resource type="Script" path="res://src/maps/brooklyn.gd" id="1_p8xfk"]
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/tile_map.tscn" id="2_upw0n"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="3_wbrwo"]
+[ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_sksiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kb8b"]
 size = Vector2(147, 83)
+
+[sub_resource type="Curve2D" id="Curve2D_1wftv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 42, 25, 0, 0, 0, 0, 1120, 25, 0, 0, 0, 0, 1132, 635, 0, 0, 0, 0, 40, 617, 0, 0, 0, 0, 42, 25)
+}
+point_count = 5
 
 [node name="brooklyn" type="Node2D"]
 script = ExtResource("1_p8xfk")
 
 [node name="TileMap" parent="." instance=ExtResource("2_upw0n")]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 194.0
-offset_right = 1002.0
-offset_bottom = 415.0
+[node name="city name" type="Label" parent="."]
+offset_left = 147.0
+offset_top = 209.0
+offset_right = 1021.0
+offset_bottom = 430.0
 theme_override_font_sizes/font_size = 161
 text = "BROOKLYN"
+metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="car" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
 position = Vector2(83, 310)
 shape = SubResource("RectangleShape2D_1kb8b")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="car"]
 position = Vector2(87, 306)
 scale = Vector2(0.0849968, 0.0849968)
 texture = ExtResource("3_wbrwo")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="Player" parent="." instance=ExtResource("4_sksiu")]
+position = Vector2(340, 261)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1wftv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(42, 25)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+autostart = true
+
+[connection signal="body_entered" from="car" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="car" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]

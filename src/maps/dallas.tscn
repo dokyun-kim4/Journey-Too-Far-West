@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://332wphu7u5rs"]
+[gd_scene load_steps=6 format=3 uid="uid://332wphu7u5rs"]
 
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/tile_map.tscn" id="1_b0wji"]
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="2_r2gj2"]
+[ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yviij"]
 size = Vector2(189.5, 98.25)
@@ -30,6 +31,15 @@ shape = SubResource("RectangleShape2D_yviij")
 position = Vector2(108, 561)
 scale = Vector2(0.101739, 0.101739)
 texture = ExtResource("2_r2gj2")
+
+[node name="Player" parent="." instance=ExtResource("4_peklx")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
