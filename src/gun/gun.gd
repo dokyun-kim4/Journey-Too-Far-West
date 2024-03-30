@@ -2,10 +2,12 @@ extends Area2D
 
 func _physics_process(delta):
 	look_at(get_global_mouse_position())
+	if abs(rotation) > PI/2:
+		rotation = sign(rotation) * PI / 2
 	#var targets_in_range = get_overlapping_bodies()
 	#if targets_in_range.size() > 0:
 		#var cur_target = targets_in_range[0]
-		#look_at(cur_target.global_position) s
+		#look_at(cur_target.global_position)
 	if Input.is_action_pressed("shoot"):
 		%ShootTimer.start(0.05)
 	
