@@ -5,7 +5,7 @@ signal player_dead
 var health = 100.0
 var cur_facing = Vector2.RIGHT
 
-const PLAYER_BASE_SPEED = 600
+const PLAYER_BASE_SPEED = 350
 const SPRINT_MULTIPLIER = 2
 const DAMAGE_RATE = 5.0
 
