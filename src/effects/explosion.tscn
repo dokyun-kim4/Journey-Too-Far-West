@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bge272r2tpxvs"]
 
-[ext_resource type="Texture2D" uid="uid://qjeiq1ndpdb1" path="res://assets/mobs/explosion.png" id="1_mxy56"]
+[ext_resource type="Texture2D" uid="uid://vqstuo0xmvai" path="res://sprites/mobs/explosion.png" id="1_dcj0t"]
 
 [node name="Explosion" type="CharacterBody2D"]
 
 [node name="Explosion" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 9.53674e-07)
 scale = Vector2(0.0704001, 0.0704001)
-texture = ExtResource("1_mxy56")
+texture = ExtResource("1_dcj0t")

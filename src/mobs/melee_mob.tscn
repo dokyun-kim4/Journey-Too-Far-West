@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdgg18fhh31kw"]
 
 [ext_resource type="Script" path="res://src/mobs/melee_mob.gd" id="1_3xfpx"]
-[ext_resource type="Texture2D" uid="uid://c1m7mdr35pqvs" path="res://assets/mobs/scout.png" id="1_vq8mw"]
+[ext_resource type="Texture2D" uid="uid://0rujf0omqmnt" path="res://sprites/mobs/scout.png" id="2_iywwv"]
 [ext_resource type="PackedScene" uid="uid://dj5sjxfbbt6vc" path="res://src/enemy_weapon/bat.tscn" id="3_bfwkv"]
 
 [sub_resource type="GDScript" id="GDScript_mrssf"]
@@ -19,11 +19,11 @@ script = ExtResource("1_3xfpx")
 [node name="Scout" type="Sprite2D" parent="."]
 position = Vector2(-1.43051e-06, 0)
 scale = Vector2(0.0396972, 0.042122)
-texture = ExtResource("1_vq8mw")
+texture = ExtResource("2_iywwv")
 script = SubResource("GDScript_mrssf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qnhpf")
 
 [node name="baseball_bat" parent="." instance=ExtResource("3_bfwkv")]
-position = Vector2(13, -11)
+position = Vector2(-2, -4)

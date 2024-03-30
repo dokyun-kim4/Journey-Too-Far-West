@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dj5sjxfbbt6vc"]
 
 [ext_resource type="Script" path="res://src/enemy_weapon/bat.gd" id="1_5l1k3"]
-[ext_resource type="Texture2D" uid="uid://di4h0epmt3ldb" path="res://assets/mobs/bat.png" id="1_5l5m0"]
+[ext_resource type="Texture2D" uid="uid://why7x85v661o" path="res://sprites/mobs/bat.png" id="2_awyiy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7hofp"]
 radius = 38.0526
@@ -18,6 +18,6 @@ shape = SubResource("CircleShape2D_7hofp")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Bat" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(21, -9.53674e-07)
+position = Vector2(25, -6)
 rotation = -0.261799
-texture = ExtResource("1_5l5m0")
+texture = ExtResource("2_awyiy")
