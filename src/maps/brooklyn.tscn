@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://c8xx7oclrtebh"]
+[gd_scene load_steps=2 format=3 uid="uid://c8xx7oclrtebh"]
 
-[node name="Brooklyn" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kb8b"]
+size = Vector2(326.5, 66)
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="brooklyn" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(574, 35)
+shape = SubResource("RectangleShape2D_1kb8b")
