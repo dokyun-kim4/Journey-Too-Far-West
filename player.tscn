@@ -19,5 +19,5 @@ texture = ExtResource("1_vgooa")
 position = Vector2(-12.5, 6)
 shape = SubResource("RectangleShape2D_ipn4q")
 
-[node name="Area2D" parent="." instance=ExtResource("3_4wgbs")]
-position = Vector2(103, 3)
+[node name="Gun" parent="." instance=ExtResource("3_4wgbs")]
+position = Vector2(71, 0)
