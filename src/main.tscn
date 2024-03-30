@@ -32,9 +32,6 @@ script = SubResource("GDScript_14iy5")
 [node name="Player" parent="." instance=ExtResource("1_yf3ku")]
 position = Vector2(261, 303)
 
-<<<<<<< Updated upstream
-[node name="Camera2D" type="Camera2D" parent="Player"]
-=======
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_207fk")
 
@@ -49,4 +46,3 @@ wait_time = 0.3
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
->>>>>>> Stashed changes
