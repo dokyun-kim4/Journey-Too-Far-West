@@ -1,14 +1,18 @@
+# BROOKLYN SCRIPT
 extends Node2D
+
+const MIN_SPAWN_TIME = 2.0
+const MAX_SPAWN_TIME = 5.0
+const MAX_MOBS = 15
+var mob_count = 0
+var killed = 0
 
 var car_activate = false
 var stage_clear = false
 
-const MAX_MOBS = 2
-var mob_count = 0
-var killed = 0
-
 func _ready():
 	%car.hide()
+	%city_name.show()
 
 func _physics_process(delta):
 	if car_activate == true and stage_clear == true:
@@ -23,10 +27,14 @@ func spawn_mob():
 	add_child(new_mob)
 	
 	new_mob.mob_dead.connect(_on_mob_dead)
+
+func _on_title_timer_timeout():
+	%city_name.hide()
 	
 func _on_area_2d_body_entered(body):
 	car_activate = true
 	
+
 func _on_area_2d_body_exited(body):
 	car_activate = false
 	
@@ -34,7 +42,7 @@ func _on_timer_timeout():
 	if mob_count < MAX_MOBS:
 		spawn_mob()
 		mob_count += 1
-		%SpawnTimer.wait_time = randf_range(2.0, 5.0)
+		%SpawnTimer.wait_time = randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
 		print("Time until next spawn: ", %SpawnTimer.wait_time)		
 
 func _on_mob_dead():
