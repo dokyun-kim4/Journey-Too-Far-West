@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxv12h3jfs1fb"]
 
 [ext_resource type="Script" path="res://src/gun/gun.gd" id="1_6yqnd"]
-[ext_resource type="Texture2D" uid="uid://dgmwdbsddgs8n" path="res://weapon_temp.png" id="1_fmvry"]
+[ext_resource type="Texture2D" uid="uid://cu7tjfyhqfjjy" path="res://sprites/props/cloud_gun.png" id="2_85ja2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51ynt"]
-radius = 623.675
+radius = 379.223
 
 [node name="Gun" type="Area2D"]
 collision_layer = 0
@@ -13,18 +13,20 @@ script = ExtResource("1_6yqnd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_51ynt")
+debug_color = Color(0.223529, 0.619608, 0.466667, 0.419608)
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="WeaponTemp" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(160, -1)
-scale = Vector2(0.0819672, 0.0819672)
-texture = ExtResource("1_fmvry")
+texture_filter = 1
+position = Vector2(53, 0)
+scale = Vector2(2.39775, 2.39775)
+texture = ExtResource("2_85ja2")
 flip_h = true
 
 [node name="ShootPoint" type="Marker2D" parent="WeaponPivot/WeaponTemp"]
 unique_name_in_owner = true
-position = Vector2(1134.6, -195.2)
+position = Vector2(10.4265, -5.83882)
 
 [node name="ShootTimer" type="Timer" parent="."]
 unique_name_in_owner = true
