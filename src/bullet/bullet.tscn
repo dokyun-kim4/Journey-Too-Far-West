@@ -20,3 +20,5 @@ shape = SubResource("CircleShape2D_wfpsf")
 position = Vector2(5, -1)
 scale = Vector2(0.102214, 0.102214)
 texture = ExtResource("1_hqnm2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
