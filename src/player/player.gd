@@ -6,6 +6,10 @@ var cur_facing = Vector2(1,0)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if sign(cur_facing.x) != direction.x and direction.x != 0: 
+		scale.x = sign(direction.x)
+	
 	if abs(direction.x) > 0 or abs(direction.y) > 0:
 		cur_facing = direction
 	
@@ -13,6 +17,5 @@ func _physics_process(delta):
 		velocity = cur_facing * PLAYER_BASE_SPEED * SPRINT_MULTIPLIER
 	else: 
 		velocity = direction * PLAYER_BASE_SPEED 
-	#if abs(direction_x) >= 0.001:
-		#scale.x = sign(direction_x)
+
 	move_and_slide()
