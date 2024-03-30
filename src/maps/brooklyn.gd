@@ -33,6 +33,7 @@ func _on_area_2d_body_exited(body):
 func _on_timer_timeout():
 	if mob_count < MAX_MOBS:
 		spawn_mob()
+		mob_count += 1
 		%SpawnTimer.wait_time = randf_range(2.0, 5.0)
 		print("Time until next spawn: ", %SpawnTimer.wait_time)		
 
