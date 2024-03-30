@@ -15,7 +15,7 @@ func _physics_process(delta):
 	#if sign(cur_facing.x) != sign(direction.x) and direction.x != 0: 
 		#scale.x = -1
 		
-	if abs(direction.x) > 0:
+	if abs(direction.x) > 0 or abs(direction.y) > 0:
 		cur_facing = direction
 	
 	if Input.is_action_pressed("sprint"):
