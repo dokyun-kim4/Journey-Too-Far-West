@@ -24,6 +24,11 @@ func _physics_process(delta):
 		velocity = direction * PLAYER_BASE_SPEED 
 	move_and_slide()
 	
+	if velocity.length() > 0.0:
+		%wukong_forward.walk_forward_animation()
+	else:
+		%wukong_forward.stop()
+	
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta

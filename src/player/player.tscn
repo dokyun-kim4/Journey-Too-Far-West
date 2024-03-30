@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj0t2lvjqi1n5"]
+[gd_scene load_steps=18 format=3 uid="uid://bj0t2lvjqi1n5"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_qlmnk"]
 [ext_resource type="PackedScene" uid="uid://bxv12h3jfs1fb" path="res://src/gun/gun.tscn" id="3_4wgbs"]
-[ext_resource type="Texture2D" uid="uid://cbirc3gy5v4a6" path="res://Assets/Wukong/Wukong.png" id="3_uxiip"]
+[ext_resource type="Texture2D" uid="uid://1scbb6orjet" path="res://Assets/Wukong/Wukong_Walk_Forward.png" id="4_artg3"]
+[ext_resource type="Script" path="res://src/player/wukong_forward.gd" id="5_bts7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipn4q"]
 size = Vector2(44, 62.5)
@@ -15,16 +16,75 @@ bg_color = Color(0.0901961, 0.623529, 0.2, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_fonwf"]
 radius = 24.0208
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4fs6"]
+atlas = ExtResource("4_artg3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk51i"]
+atlas = ExtResource("4_artg3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k24nt"]
+atlas = ExtResource("4_artg3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a87te"]
+atlas = ExtResource("4_artg3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tktd"]
+atlas = ExtResource("4_artg3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5oeo"]
+atlas = ExtResource("4_artg3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihpvn"]
+atlas = ExtResource("4_artg3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7php"]
+atlas = ExtResource("4_artg3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n05ht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4fs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk51i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k24nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a87te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tktd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5oeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihpvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7php")
+}],
+"loop": true,
+"name": &"walk_forward",
+"speed": 8.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qlmnk")
 
-[node name="Wukong" type="Sprite2D" parent="."]
-position = Vector2(-2, -36)
-scale = Vector2(0.3375, 0.3375)
-texture = ExtResource("3_uxiip")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -11.25)
+position = Vector2(0, -11.25)
 shape = SubResource("RectangleShape2D_ipn4q")
 
 [node name="Gun" parent="." instance=ExtResource("3_4wgbs")]
@@ -50,3 +110,13 @@ collision_mask = 2
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_fonwf")
 debug_color = Color(0.984314, 0, 0.337255, 0.419608)
+
+[node name="wukong_forward" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(4.76837e-07, -34)
+scale = Vector2(3.29688, 3.29688)
+sprite_frames = SubResource("SpriteFrames_n05ht")
+animation = &"walk_forward"
+frame_progress = 0.78019
+script = ExtResource("5_bts7v")
