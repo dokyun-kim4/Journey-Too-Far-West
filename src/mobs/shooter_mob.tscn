@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dar8dv70jtqea"]
+
+[ext_resource type="Script" path="res://src/mobs/shooter_mob.gd" id="1_8xcng"]
+[ext_resource type="Texture2D" uid="uid://0rujf0omqmnt" path="res://sprites/mobs/scout.png" id="1_q8bli"]
+[ext_resource type="PackedScene" uid="uid://bc01xyxgohtl" path="res://src/enemy_weapon/enemy_gun.tscn" id="2_rbo1e"]
+[ext_resource type="Script" path="res://src/enemy_weapon/enemy_gun.gd" id="3_1p3on"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tereh"]
+radius = 24.0
+height = 62.0
+
+[node name="Shooter" type="CharacterBody2D"]
+platform_floor_layers = 4294967040
+script = ExtResource("1_8xcng")
+
+[node name="Scout" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 4.76837e-07)
+scale = Vector2(0.0532227, 0.0532227)
+texture = ExtResource("1_q8bli")
+
+[node name="enemy_gun" parent="." instance=ExtResource("2_rbo1e")]
+position = Vector2(1, 2)
+script = ExtResource("3_1p3on")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_tereh")
