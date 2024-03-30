@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj0t2lvjqi1n5"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_qlmnk"]
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_qlmnk"]
 [ext_resource type="Texture2D" uid="uid://cdxrhcl78ds84" path="res://wukong_temp.png" id="1_vgooa"]
-[ext_resource type="PackedScene" uid="uid://bxv12h3jfs1fb" path="res://gun.tscn" id="3_4wgbs"]
+[ext_resource type="PackedScene" uid="uid://bxv12h3jfs1fb" path="res://src/gun/gun.tscn" id="3_4wgbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipn4q"]
 size = Vector2(211, 97)
