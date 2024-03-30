@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdgg18fhh31kw"]
 
 [ext_resource type="Script" path="res://src/mobs/melee_mob.gd" id="1_3xfpx"]
-[ext_resource type="Texture2D" uid="uid://dh763psyk0dlv" path="res://sprites/mobs/scout.png" id="2_iywwv"]
+[ext_resource type="Texture2D" uid="uid://0rujf0omqmnt" path="res://sprites/mobs/scout.png" id="2_iywwv"]
 [ext_resource type="PackedScene" uid="uid://dj5sjxfbbt6vc" path="res://src/enemy_weapon/bat.tscn" id="3_bfwkv"]
 
 [sub_resource type="GDScript" id="GDScript_mrssf"]
@@ -14,6 +14,7 @@ height = 48.0
 
 [node name="melee_mob" type="CharacterBody2D"]
 collision_layer = 2
+platform_floor_layers = 4294967040
 script = ExtResource("1_3xfpx")
 
 [node name="Scout" type="Sprite2D" parent="."]
