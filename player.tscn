@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj0t2lvjqi1n5"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_qlmnk"]
+[ext_resource type="Texture2D" uid="uid://cdxrhcl78ds84" path="res://wukong_temp.png" id="1_vgooa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipn4q"]
+size = Vector2(211, 97)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qlmnk")
+
+[node name="WukongTemp" type="Sprite2D" parent="."]
+position = Vector2(-1, -20)
+scale = Vector2(0.27069, 0.27069)
+texture = ExtResource("1_vgooa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.5, 6)
+shape = SubResource("RectangleShape2D_ipn4q")
