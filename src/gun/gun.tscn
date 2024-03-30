@@ -24,4 +24,10 @@ flip_h = true
 
 [node name="ShootPoint" type="Marker2D" parent="WeaponPivot/WeaponTemp"]
 unique_name_in_owner = true
-position = Vector2(1110.2, -195.2)
+position = Vector2(1134.6, -195.2)
+
+[node name="ShootTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.504
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
