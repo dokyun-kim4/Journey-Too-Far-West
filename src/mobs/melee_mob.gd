@@ -2,7 +2,8 @@ extends CharacterBody2D
 signal mob_dead
 var health = 3
 
-@onready var player = get_node("/root/brooklyn/Player")
+
+@onready var player = get_node("../Player")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
