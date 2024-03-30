@@ -1,11 +1,35 @@
-[gd_scene format=3 uid="uid://332wphu7u5rs"]
+[gd_scene load_steps=5 format=3 uid="uid://332wphu7u5rs"]
+
+[ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/tile_map.tscn" id="1_b0wji"]
+[ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
+[ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="2_r2gj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yviij"]
+size = Vector2(189.5, 98.25)
 
 [node name="dallas" type="Node2D"]
+script = ExtResource("1_dgcns")
+
+[node name="TileMap" parent="." instance=ExtResource("1_b0wji")]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 204.0
-offset_top = 161.0
-offset_right = 1020.0
-offset_bottom = 463.0
+offset_left = 165.0
+offset_top = 166.0
+offset_right = 981.0
+offset_bottom = 468.0
 theme_override_font_sizes/font_size = 221
 text = "DALLAS"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(107.25, 564.125)
+shape = SubResource("RectangleShape2D_yviij")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(108, 561)
+scale = Vector2(0.101739, 0.101739)
+texture = ExtResource("2_r2gj2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
