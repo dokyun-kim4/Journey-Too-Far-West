@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_qlmnk"]
 [ext_resource type="PackedScene" uid="uid://bxv12h3jfs1fb" path="res://src/gun/gun.tscn" id="3_4wgbs"]
-[ext_resource type="Texture2D" uid="uid://ccxn53uauk2ac" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_jtqr2"]
+[ext_resource type="Texture2D" uid="uid://y4om2cfym24l" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_jtqr2"]
 [ext_resource type="Script" path="res://src/player/Wukong_Animations.gd" id="6_ksf8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipn4q"]
@@ -173,7 +173,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_backward",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -202,7 +202,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_forward",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -231,7 +231,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -260,7 +260,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -301,5 +301,6 @@ texture_filter = 1
 position = Vector2(0, -30)
 scale = Vector2(3.03125, 3.03125)
 sprite_frames = SubResource("SpriteFrames_0vg8n")
-animation = &"walk_forward"
+animation = &"walk_right"
+frame_progress = 0.878456
 script = ExtResource("6_ksf8a")
