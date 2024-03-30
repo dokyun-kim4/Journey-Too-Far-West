@@ -5,12 +5,6 @@
 
 [sub_resource type="GDScript" id="GDScript_14iy5"]
 script/source = "extends Node2D
-
-func _ready():
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
 	
 func spawn_mob():
 	var new_mob = preload(\"res://src/mobs/melee_mob.tscn\").instantiate()
@@ -46,7 +40,7 @@ unique_name_in_owner = true
 position = Vector2(42, 25)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
