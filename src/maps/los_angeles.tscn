@@ -35,6 +35,7 @@ text = "Welcome to Los Angeles"
 
 [node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
+texture_filter = 1
 position = Vector2(-13, 385)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
