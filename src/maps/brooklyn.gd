@@ -67,7 +67,7 @@ func _on_brooklyn_player_karma_used():
 	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
 	buddha_hand.global_position = get_global_mouse_position()
 	add_child(buddha_hand)
-	%BuddhaTimer.start(5)
+	%BuddhaTimer.start(1.0)
 
 func _on_buddha_timer_timeout():
 	%BuddhaTimer.stop()

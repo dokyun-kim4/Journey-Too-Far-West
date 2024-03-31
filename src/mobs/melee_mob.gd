@@ -1,13 +1,17 @@
 extends CharacterBody2D
 signal mob_dead
 var health = 3
-
+const REPEL = 0
 
 @onready var player = get_node("../Player")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
+	var distance = global_position.distance_to(player.global_position)
 	velocity = direction * 100.0
+	if distance <= REPEL:
+		direction = -direction
+		velocity = direction * 100.0
 	move_and_slide()
 	
 func take_damage_mob():
@@ -28,4 +32,3 @@ func take_damage_buddha():
 	health = 0
 	queue_free()
 	explosion()
-	
