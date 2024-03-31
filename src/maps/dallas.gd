@@ -1,14 +1,22 @@
 # DALLAS SCRIPT
 extends Node2D
 
+signal karma_activate
+signal karma_inc
+signal karma_reset
+
 const MIN_SPAWN_TIME = 2.0
 const MAX_SPAWN_TIME = 5.0
-const MAX_MOBS = 1
+const MAX_MOBS = 10
+const KARMA_MAX = 8
+
 var mob_count = 0
 var killed = 0
+var karma_kill = 0
 
 var car_activate = false
 var stage_clear = false
+var buddha_hand
 
 func _ready():
 	%Car.hide()
@@ -19,6 +27,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("next_level"):
 			var next_scene = load("res://src/maps/los_angeles.tscn")
 			get_tree().change_scene_to_packed(next_scene)
+	
+	if karma_kill == KARMA_MAX:
+		karma_activate.emit()
 
 func spawn_mob():
 	var new_mob = preload("res://src/mobs/shooter_mob.tscn").instantiate()
@@ -45,6 +56,23 @@ func _on_spawn_timer_timeout():
 
 func _on_mob_dead():
 	killed += 1
+	killed += 1
+	if karma_kill < KARMA_MAX:
+		karma_kill += 1
+		karma_inc.emit()
 	if killed == MAX_MOBS:
 		%Car.show()
 		stage_clear = true
+	
+func _on_player_karma_used():
+	karma_kill = 0
+	karma_reset.emit()
+	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
+	buddha_hand.global_position = get_global_mouse_position()
+	add_child(buddha_hand)
+	%DallasBuddhaTimer.start()
+	%DallasBuddhaTimer.wait_time = 1
+
+func _on_dallas_buddha_timer_timeout():
+	if is_instance_valid(buddha_hand):
+		buddha_hand.queue_free()

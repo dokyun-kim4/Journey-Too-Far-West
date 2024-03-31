@@ -16,7 +16,6 @@ var karma_kill = 0
 
 var car_activate = false
 var stage_clear = false
-
 var buddha_hand
 
 func _ready():
@@ -74,5 +73,6 @@ func _on_brooklyn_player_karma_used():
 	%BuddhaTimer.wait_time = 1
 
 func _on_buddha_timer_timeout():
-	buddha_hand.queue_free()
+	if is_instance_valid(buddha_hand):
+		buddha_hand.queue_free()
 	

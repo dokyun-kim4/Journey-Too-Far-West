@@ -17,11 +17,25 @@ func _physics_process(delta):
 
 func _on_brooklyn_karma_inc():
 	%BuddhaButtonAnimation.frame += 1
+func _on_dallas_karma_inc():
+	%BuddhaButtonAnimation.frame += 1
+func _on_los_angeles_karma_inc():
+	%BuddhaButtonAnimation.frame += 1
 
 func _on_brooklyn_karma_activate():
 	%BuddhaButtonAnimation.modulate.a = 1
+func _on_dallas_karma_activate():
+	%BuddhaButtonAnimation.modulate.a = 1
+func _on_los_angeles_karma_activate():
+	%BuddhaButtonAnimation.modulate.a = 1
 
 func _on_brooklyn_karma_reset():
+	%BuddhaButtonAnimation.modulate.a = 0.5
+	%BuddhaButtonAnimation.frame = 0
+func _on_dallas_karma_reset():
+	%BuddhaButtonAnimation.modulate.a = 0.5
+	%BuddhaButtonAnimation.frame = 0
+func _on_los_angeles_karma_reset():
 	%BuddhaButtonAnimation.modulate.a = 0.5
 	%BuddhaButtonAnimation.frame = 0
 
