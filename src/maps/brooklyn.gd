@@ -8,7 +8,7 @@ signal karma_reset
 const MIN_SPAWN_TIME = 0.7
 const MAX_SPAWN_TIME = 2.0
 const MAX_MOBS = 30
-const KARMA_MAX = 1
+const KARMA_MAX = 8
 
 var mob_count = 0
 var killed = 0
