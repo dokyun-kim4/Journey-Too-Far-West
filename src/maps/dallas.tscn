@@ -21,10 +21,10 @@ script = ExtResource("1_dgcns")
 
 [node name="city_name" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 469.0
-offset_top = 247.0
-offset_right = 1029.0
-offset_bottom = 331.0
+offset_left = 286.0
+offset_top = 24.0
+offset_right = 846.0
+offset_bottom = 108.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 61
 text = "Welcome to Dallas"
