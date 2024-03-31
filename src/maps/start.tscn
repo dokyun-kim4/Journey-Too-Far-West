@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5gen5aaoet3t"]
+
+[ext_resource type="Script" path="res://src/maps/start.gd" id="1_0fpax"]
+[ext_resource type="PackedScene" uid="uid://si8x0dth8a8" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
+[ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_07k8b"]
+
+[node name="start" type="Node2D"]
+script = ExtResource("1_0fpax")
+
+[node name="TileMap" parent="." instance=ExtResource("2_bk0kt")]
+position = Vector2(3636, -460)
+scale = Vector2(3.2, 3.2)
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+offset_left = 218.0
+offset_top = 58.0
+offset_right = 998.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_07k8b")
+theme_override_font_sizes/font_size = 100
+text = "Journey Too far West"
+
+[node name="Lobo" type="Label" parent="."]
+offset_left = 333.0
+offset_top = 139.0
+offset_right = 808.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.0156863, 0.435294, 0.647059, 1)
+theme_override_fonts/font = ExtResource("3_07k8b")
+theme_override_font_sizes/font_size = 70
+text = "A Lobo digital Game"
+
+[node name="quit" type="Button" parent="."]
+texture_filter = 1
+offset_left = 489.0
+offset_top = 402.0
+offset_right = 635.0
+offset_bottom = 481.0
+theme_override_fonts/font = ExtResource("3_07k8b")
+theme_override_font_sizes/font_size = 70
+text = "Quit"
+
+[node name="start" type="Button" parent="."]
+texture_filter = 1
+offset_left = 489.0
+offset_top = 292.0
+offset_right = 635.0
+offset_bottom = 371.0
+theme_override_fonts/font = ExtResource("3_07k8b")
+theme_override_font_sizes/font_size = 70
+text = "Start
+"
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
