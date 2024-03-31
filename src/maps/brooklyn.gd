@@ -5,10 +5,10 @@ signal karma_activate
 signal karma_inc
 signal karma_reset
 
-const MIN_SPAWN_TIME = 2.0
-const MAX_SPAWN_TIME = 5.0
-const MAX_MOBS = 10
-const KARMA_MAX = 8
+const MIN_SPAWN_TIME = 0.7
+const MAX_SPAWN_TIME = 2.0
+const MAX_MOBS = 30
+const KARMA_MAX = 1
 
 var mob_count = 0
 var killed = 0
