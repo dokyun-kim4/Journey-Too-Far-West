@@ -19,7 +19,7 @@ script = ExtResource("1_p8xfk")
 
 [node name="TileMap" parent="." instance=ExtResource("2_upw0n")]
 
-[node name="city_name" type="Label" parent="."]
+[node name="CityName" type="Label" parent="."]
 unique_name_in_owner = true
 anchors_preset = 10
 anchor_right = 1.0
@@ -47,7 +47,7 @@ position = Vector2(87, 306)
 scale = Vector2(0.0849968, 0.0849968)
 texture = ExtResource("3_wbrwo")
 
-[node name="car_instruction" type="Label" parent="Car"]
+[node name="CarInstruction" type="Label" parent="Car"]
 offset_left = 55.0
 offset_top = 349.0
 offset_right = 108.0
@@ -76,13 +76,13 @@ unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
-[node name="TitleTimer" type="Timer" parent="."]
+[node name="DisplayTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
 [connection signal="karma_activate" from="." to="Player" method="_on_brooklyn_karma_activate"]
-[connection signal="body_entered" from="Car" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Car" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
+[connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="timeout" from="TitleTimer" to="." method="_on_title_timer_timeout"]
+[connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]

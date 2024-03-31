@@ -19,11 +19,11 @@ script = ExtResource("1_dgcns")
 
 [node name="TileMap" parent="." instance=ExtResource("1_b0wji")]
 
-[node name="city_name" type="Label" parent="."]
+[node name="CityName" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 286.0
+offset_left = 302.0
 offset_top = 24.0
-offset_right = 846.0
+offset_right = 862.0
 offset_bottom = 108.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 61
@@ -74,8 +74,11 @@ unique_name_in_owner = true
 wait_time = 3.0
 autostart = true
 
-[node name="TitleTimer" type="Timer" parent="."]
+[node name="DisplayTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
+[connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
+[connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]
