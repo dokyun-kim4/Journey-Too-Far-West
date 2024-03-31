@@ -13,6 +13,7 @@ const SPRINT_MULTIPLIER = 2
 const DAMAGE_RATE = 5.0
 
 @onready var walk_sound = $WalkingSound
+@onready var dash_sound = $DashSound
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -22,6 +23,7 @@ func _physics_process(delta):
 	
 	if sprint_enabled and Input.is_action_pressed("sprint"):
 		velocity = cur_facing * PLAYER_BASE_SPEED * SPRINT_MULTIPLIER
+		dash_sound.play()
 		if %SprintTimer.time_left == 0:
 			%SprintTimer.start(3.0)
 			
