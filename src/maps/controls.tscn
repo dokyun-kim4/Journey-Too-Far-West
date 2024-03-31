@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://dpo10nx22hydk"]
 
 [ext_resource type="Script" path="res://src/maps/controls.gd" id="1_riqti"]
-[ext_resource type="PackedScene" path="res://src/maps/map_assets/ending_tile.tscn" id="2_4hq1j"]
+[ext_resource type="PackedScene" uid="uid://si8x0dth8a8" path="res://src/maps/map_assets/ending_tile.tscn" id="2_4hq1j"]
 [ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_vohb1"]
-[ext_resource type="Texture2D" uid="uid://d1xvscioy47fh" path="res://sprites/wukong/Wukong_Shadow.png" id="4_08tft"]
-[ext_resource type="Texture2D" uid="uid://ccxn53uauk2ac" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_47qgd"]
-[ext_resource type="Texture2D" uid="uid://bj880miyid5xa" path="res://sprites/props/mouse-left.png" id="6_nw3e5"]
-[ext_resource type="Texture2D" uid="uid://b8oxoanlfdys5" path="res://sprites/props/mouse-right.png" id="7_jp5i5"]
+[ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="4_08tft"]
+[ext_resource type="Texture2D" uid="uid://bsuo4g5v1d811" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_47qgd"]
+[ext_resource type="Texture2D" uid="uid://dhddr8wou1ham" path="res://sprites/props/mouse-left.png" id="6_nw3e5"]
+[ext_resource type="Texture2D" uid="uid://6h1i1shu8q0o" path="res://sprites/props/mouse-right.png" id="7_jp5i5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdtec"]
 atlas = ExtResource("5_47qgd")
@@ -112,9 +112,9 @@ theme_override_font_sizes/font_size = 70
 text = "Back to Main Menu"
 
 [node name="S" type="Button" parent="."]
-offset_left = 208.0
+offset_left = 116.0
 offset_top = 375.76
-offset_right = 279.0
+offset_right = 187.0
 offset_bottom = 434.76
 theme_override_fonts/font = ExtResource("3_vohb1")
 theme_override_font_sizes/font_size = 50
@@ -122,19 +122,29 @@ action_mode = 0
 text = "S"
 
 [node name="D" type="Button" parent="."]
-offset_left = 292.0
+offset_left = 200.0
 offset_top = 375.76
-offset_right = 363.0
+offset_right = 271.0
 offset_bottom = 434.76
 theme_override_fonts/font = ExtResource("3_vohb1")
 theme_override_font_sizes/font_size = 50
 action_mode = 0
 text = "D"
 
+[node name="Shift" type="Button" parent="."]
+offset_left = 353.0
+offset_top = 376.0
+offset_right = 473.0
+offset_bottom = 435.0
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "Shift"
+
 [node name="A" type="Button" parent="."]
-offset_left = 126.0
+offset_left = 34.0
 offset_top = 374.76
-offset_right = 197.0
+offset_right = 105.0
 offset_bottom = 433.76
 theme_override_fonts/font = ExtResource("3_vohb1")
 theme_override_font_sizes/font_size = 50
@@ -142,9 +152,9 @@ action_mode = 0
 text = "A"
 
 [node name="W" type="Button" parent="."]
-offset_left = 208.0
+offset_left = 116.0
 offset_top = 306.76
-offset_right = 279.0
+offset_right = 187.0
 offset_bottom = 365.76
 theme_override_fonts/font = ExtResource("3_vohb1")
 theme_override_font_sizes/font_size = 50
@@ -153,20 +163,31 @@ text = "W"
 
 [node name="WASD" type="Label" parent="."]
 texture_filter = 1
-offset_left = 173.0
+offset_left = 81.0
 offset_top = 475.76
-offset_right = 313.0
+offset_right = 221.0
 offset_bottom = 575.76
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_vohb1")
 theme_override_font_sizes/font_size = 100
 text = "Move"
 
+[node name="DASH" type="Label" parent="."]
+texture_filter = 1
+offset_left = 346.0
+offset_top = 475.76
+offset_right = 486.0
+offset_bottom = 575.76
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 100
+text = "dash"
+
 [node name="SHOOT" type="Label" parent="."]
 texture_filter = 1
-offset_left = 461.0
+offset_left = 590.75
 offset_top = 478.76
-offset_right = 636.0
+offset_right = 765.75
 offset_bottom = 578.76
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_vohb1")
@@ -175,9 +196,9 @@ text = "shoot"
 
 [node name="ABILITY" type="Label" parent="."]
 texture_filter = 1
-offset_left = 737.0
+offset_left = 866.75
 offset_top = 478.76
-offset_right = 982.0
+offset_right = 1111.75
 offset_bottom = 578.76
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_vohb1")
@@ -185,12 +206,12 @@ theme_override_font_sizes/font_size = 100
 text = "ABIlity"
 
 [node name="Mouse-left" type="Sprite2D" parent="."]
-position = Vector2(548, 367.76)
+position = Vector2(677.75, 367.76)
 scale = Vector2(0.585937, 0.585937)
 texture = ExtResource("6_nw3e5")
 
 [node name="Mouse-right" type="Sprite2D" parent="."]
-position = Vector2(857, 364.76)
+position = Vector2(986.75, 364.76)
 scale = Vector2(0.586, 0.586)
 texture = ExtResource("7_jp5i5")
 
