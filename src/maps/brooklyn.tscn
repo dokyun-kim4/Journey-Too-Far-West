@@ -1,57 +1,61 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8xx7oclrtebh"]
+[gd_scene load_steps=8 format=3 uid="uid://c8xx7oclrtebh"]
 
 [ext_resource type="Script" path="res://src/maps/brooklyn.gd" id="1_p8xfk"]
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/tile_map.tscn" id="2_upw0n"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="3_wbrwo"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_sksiu"]
 
+[sub_resource type="SystemFont" id="SystemFont_1ank3"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kb8b"]
-size = Vector2(147, 83)
+size = Vector2(156.504, 89.5)
 
 [sub_resource type="Curve2D" id="Curve2D_1wftv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 42, 25, 0, 0, 0, 0, 1120, 25, 0, 0, 0, 0, 1132, 635, 0, 0, 0, 0, 40, 617, 0, 0, 0, 0, 42, 25)
+"points": PackedVector2Array(0, 0, 0, 0, 42, 25, 0, 0, 0, 0, 1100.55, 59.3817, 0, 0, 0, 0, 1096.87, 633.889, 0, 0, 0, 0, 40, 617, 0, 0, 0, 0, 33, 155, 0, 0, 0, 0, 42, 25)
 }
-point_count = 5
+point_count = 6
 
 [node name="brooklyn" type="Node2D"]
 script = ExtResource("1_p8xfk")
 
 [node name="TileMap" parent="." instance=ExtResource("2_upw0n")]
+position = Vector2(3636, -460)
+scale = Vector2(3.2, 3.2)
 
 [node name="CityName" type="Label" parent="."]
 unique_name_in_owner = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 271.0
-offset_top = 17.0
-offset_right = 902.0
-offset_bottom = 135.0
+offset_left = 268.0
+offset_top = 54.0
+offset_right = 899.0
+offset_bottom = 172.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_1ank3")
 theme_override_font_sizes/font_size = 61
 text = "Welcome to Brooklyn"
 
 [node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
-visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
-position = Vector2(83, 310)
+position = Vector2(98.7481, 243.25)
 shape = SubResource("RectangleShape2D_1kb8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Car"]
-position = Vector2(87, 306)
-scale = Vector2(0.0849968, 0.0849968)
+position = Vector2(106, 240)
+scale = Vector2(0.101739, 0.101739)
 texture = ExtResource("3_wbrwo")
 
 [node name="CarInstruction" type="Label" parent="Car"]
-offset_left = 55.0
-offset_top = 349.0
-offset_right = 108.0
-offset_bottom = 372.0
+offset_left = 69.0
+offset_top = 290.0
+offset_right = 122.0
+offset_bottom = 313.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "[Enter]"
 
@@ -65,11 +69,14 @@ limit_right = 1152
 limit_bottom = 648
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(1.60441, 61.1013)
+scale = Vector2(0.981685, 0.835949)
 curve = SubResource("Curve2D_1wftv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
 position = Vector2(42, 25)
+rotation = 0.0324685
 
 [node name="SpawnTimer" type="Timer" parent="."]
 unique_name_in_owner = true
