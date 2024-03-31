@@ -57,7 +57,8 @@ func _on_spawn_timer_timeout():
 
 func _on_mob_dead():
 	killed += 1
-	karma_kill += 1
+	if karma_kill < 10:
+		karma_kill += 1
 	if killed == MAX_MOBS:
 		%Car.show()
 		stage_clear = true
@@ -67,9 +68,9 @@ func _on_brooklyn_player_karma_used():
 	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
 	buddha_hand.global_position = get_global_mouse_position()
 	add_child(buddha_hand)
-	%BuddhaTimer.start(1.0)
+	%BuddhaTimer.start()
+	%BuddhaTimer.wait_time = 1
 
 func _on_buddha_timer_timeout():
-	%BuddhaTimer.stop()
 	remove_child(buddha_hand)
 	
