@@ -21,9 +21,6 @@ theme_override_fonts/font = ExtResource("2_6urun")
 theme_override_font_sizes/font_size = 100
 text = "Thank You For Playing!!!"
 
-[node name="Player" parent="." instance=ExtResource("3_0lly8")]
-position = Vector2(575, 565)
-
 [node name="Name1" type="Label" parent="."]
 offset_left = 66.0
 offset_top = 231.0
@@ -63,3 +60,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6urun")
 theme_override_font_sizes/font_size = 70
 text = "Jun P. -Enemies"
+
+[node name="Player" parent="." instance=ExtResource("3_0lly8")]
+position = Vector2(575, 565)
