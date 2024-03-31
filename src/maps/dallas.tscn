@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://332wphu7u5rs"]
 
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
-[ext_resource type="PackedScene" uid="uid://dpq7v6cwy7lui" path="res://src/maps/map_assets/dallas_tile.tscn" id="2_hooha"]
+[ext_resource type="PackedScene" uid="uid://rghfhjwvr3oi" path="res://src/maps/map_assets/dallas_tile.tscn" id="2_hooha"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="2_r2gj2"]
 [ext_resource type="FontFile" uid="uid://45vc1sryqawd" path="res://src/maps/map_assets/DallasFont.ttf" id="3_eqndm"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
