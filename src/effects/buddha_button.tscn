@@ -81,7 +81,13 @@ script = ExtResource("1_l53ee")
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.580392)
 texture_filter = 1
-position = Vector2(1039, 138)
-scale = Vector2(2.59375, 2.59375)
+position = Vector2(1024.88, 138.125)
+scale = Vector2(3.61719, 3.61719)
 sprite_frames = SubResource("SpriteFrames_hswen")
-frame_progress = 0.398329
+frame_progress = 0.642261
+
+[node name="ButtonAnimationTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="ButtonAnimationTimer" to="." method="_on_button_animation_timer_timeout"]

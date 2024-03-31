@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqcrjvktw3d4x"]
+[gd_scene load_steps=6 format=3 uid="uid://cqcrjvktw3d4x"]
 
 [ext_resource type="Script" path="res://src/maps/ending.gd" id="1_1q71r"]
 [ext_resource type="PackedScene" uid="uid://si8x0dth8a8" path="res://src/maps/map_assets/ending_tile.tscn" id="1_7mnph"]
 [ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="2_6urun"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="3_0lly8"]
+[ext_resource type="Texture2D" uid="uid://c0ymv8820etes" path="res://sprites/props/exit_car.png" id="5_jsf15"]
 
 [node name="ending" type="Node2D"]
 script = ExtResource("1_1q71r")
@@ -73,9 +74,6 @@ theme_override_fonts/font = ExtResource("2_6urun")
 theme_override_font_sizes/font_size = 70
 text = "* Creators *"
 
-[node name="Player" parent="." instance=ExtResource("3_0lly8")]
-position = Vector2(566, 369)
-
 [node name="quit" type="Button" parent="."]
 texture_filter = 1
 offset_left = 458.0
@@ -85,5 +83,14 @@ offset_bottom = 598.0
 theme_override_fonts/font = ExtResource("2_6urun")
 theme_override_font_sizes/font_size = 70
 text = "Exit Game"
+
+[node name="Car" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1043, 434)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_jsf15")
+
+[node name="Player" parent="." instance=ExtResource("3_0lly8")]
+position = Vector2(1036, 481)
 
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
