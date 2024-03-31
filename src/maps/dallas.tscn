@@ -31,6 +31,7 @@ text = "Welcome to Dallas"
 
 [node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(2, -16)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
@@ -49,6 +50,7 @@ offset_right = 132.0
 offset_bottom = 647.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "[Enter]"
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_peklx")]
 position = Vector2(1059, 590)
