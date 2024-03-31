@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://q36jmet8kwi3"]
 
 [ext_resource type="Script" path="res://src/maps/start.gd" id="1_0fpax"]
-[ext_resource type="PackedScene" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
+[ext_resource type="PackedScene" uid="uid://si8x0dth8a8" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
 [ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_07k8b"]
-[ext_resource type="Texture2D" uid="uid://ccxn53uauk2ac" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
-[ext_resource type="Texture2D" uid="uid://d1xvscioy47fh" path="res://sprites/wukong/Wukong_Shadow.png" id="5_0qa8r"]
+[ext_resource type="Texture2D" uid="uid://bsuo4g5v1d811" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
+[ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="5_0qa8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdtec"]
 atlas = ExtResource("4_uwkmj")

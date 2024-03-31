@@ -59,6 +59,12 @@ func _physics_process(delta):
 func _on_brooklyn_karma_activate():
 	karma_enabled = true
 	
+func _on_dallas_karma_activate():
+	karma_enabled = true
+	
+func _on_los_angeles_karma_activate():
+	karma_enabled = true
+	
 func take_damage():
 	health -= 0.1
 	%HealthBar.value = health
@@ -70,3 +76,5 @@ func take_damage():
 
 func _on_sprint_timer_timeout():
 	sprint_enabled = true
+
+

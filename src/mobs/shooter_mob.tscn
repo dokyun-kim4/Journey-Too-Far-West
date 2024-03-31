@@ -1,8 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://dar8dv70jtqea"]
+[gd_scene load_steps=14 format=3 uid="uid://dar8dv70jtqea"]
 
 [ext_resource type="Script" path="res://src/mobs/shooter_mob.gd" id="1_8xcng"]
-[ext_resource type="Texture2D" uid="uid://0rujf0omqmnt" path="res://sprites/mobs/scout.png" id="1_q8bli"]
+[ext_resource type="Texture2D" uid="uid://dwvtn5gldfyxy" path="res://sprites/mobs/mob_walk_forward.png" id="2_bs2ih"]
 [ext_resource type="PackedScene" uid="uid://bc01xyxgohtl" path="res://src/enemy_weapon/enemy_gun.tscn" id="2_rbo1e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0n5t"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pyx7"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2qf0"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwr75"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyh5r"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sinj"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvkes"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33mvp"]
+atlas = ExtResource("2_bs2ih")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu56l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0n5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pyx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2qf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwr75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyh5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sinj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvkes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33mvp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tereh"]
 radius = 24.0
@@ -13,13 +77,15 @@ collision_layer = 2
 platform_floor_layers = 4294967040
 script = ExtResource("1_8xcng")
 
-[node name="Scout" type="Sprite2D" parent="."]
-position = Vector2(1.19209e-07, 4.76837e-07)
-scale = Vector2(0.0532227, 0.0532227)
-texture = ExtResource("1_q8bli")
+[node name="Shooter" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(-1, -35)
+scale = Vector2(3.047, 3.047)
+sprite_frames = SubResource("SpriteFrames_pu56l")
 
 [node name="enemy_gun" parent="." instance=ExtResource("2_rbo1e")]
-position = Vector2(-28, 2)
+position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

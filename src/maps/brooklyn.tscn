@@ -137,7 +137,7 @@ texture = ExtResource("6_ttf63")
 [connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
 [connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
 [connection signal="karma_used" from="Player" to="." method="_on_brooklyn_player_karma_used"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]
 [connection signal="timeout" from="BuddhaTimer" to="." method="_on_buddha_timer_timeout"]

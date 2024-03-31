@@ -1,16 +1,76 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdgg18fhh31kw"]
+[gd_scene load_steps=14 format=3 uid="uid://cdgg18fhh31kw"]
 
 [ext_resource type="Script" path="res://src/mobs/melee_mob.gd" id="1_3xfpx"]
-[ext_resource type="Texture2D" uid="uid://gvgogfro5llc" path="res://sprites/mobs/scout.png" id="2_iywwv"]
+[ext_resource type="Texture2D" uid="uid://dwvtn5gldfyxy" path="res://sprites/mobs/mob_walk_forward.png" id="2_7rxhk"]
 [ext_resource type="PackedScene" uid="uid://dj5sjxfbbt6vc" path="res://src/enemy_weapon/bat.tscn" id="3_bfwkv"]
 
-[sub_resource type="GDScript" id="GDScript_mrssf"]
-script/source = "extends Sprite2D
-"
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv73y"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwi8d"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xng8a"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eytxe"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npbbt"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc0p1"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqowy"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sysn"]
+atlas = ExtResource("2_7rxhk")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k556n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv73y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwi8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xng8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eytxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npbbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc0p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqowy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sysn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnhpf"]
 radius = 18.0
-height = 48.0
+height = 68.0
 
 [node name="melee_mob" type="CharacterBody2D"]
 collision_layer = 2
@@ -18,14 +78,16 @@ collision_mask = 3
 platform_floor_layers = 4294967040
 script = ExtResource("1_3xfpx")
 
-[node name="Scout" type="Sprite2D" parent="."]
-position = Vector2(-1.43051e-06, 0)
-scale = Vector2(0.0396972, 0.042122)
-texture = ExtResource("2_iywwv")
-script = SubResource("GDScript_mrssf")
+[node name="Mob" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, -24)
+scale = Vector2(3.04688, 3.04688)
+sprite_frames = SubResource("SpriteFrames_k556n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_qnhpf")
 
 [node name="baseball_bat" parent="." instance=ExtResource("3_bfwkv")]
-position = Vector2(-2, -4)
+position = Vector2(-4, 1)

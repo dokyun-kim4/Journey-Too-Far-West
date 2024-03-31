@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bukibutmnhv44"]
+[gd_scene load_steps=9 format=3 uid="uid://bukibutmnhv44"]
 
 [ext_resource type="Script" path="res://src/maps/los_angeles.gd" id="1_1s7pi"]
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/map_assets/los_angeles_tile.tscn" id="2_f0fgf"]
 [ext_resource type="FontFile" uid="uid://dpxg1vaw660t" path="res://src/maps/map_assets/LosAngelesFont.ttf" id="3_wq0eu"]
-[ext_resource type="Texture2D" uid="uid://c0ymv8820etes" path="res://sprites/props/exit_car.png" id="4_eal0e"]
+[ext_resource type="Texture2D" uid="uid://drni8kya8ufs7" path="res://sprites/props/exit_car.png" id="4_eal0e"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_mgwaw"]
+[ext_resource type="PackedScene" uid="uid://iacqgbevby6i" path="res://src/effects/buddha_button.tscn" id="6_lrst0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lonv5"]
 size = Vector2(151, 99)
@@ -81,7 +82,19 @@ autostart = true
 wait_time = 2.0
 autostart = true
 
+[node name="LABuddhaTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="BuddhaButton" parent="." instance=ExtResource("6_lrst0")]
+unique_name_in_owner = true
+
+[connection signal="karma_activate" from="." to="Player" method="_on_los_angeles_karma_activate"]
+[connection signal="karma_activate" from="." to="BuddhaButton" method="_on_los_angeles_karma_activate"]
+[connection signal="karma_inc" from="." to="BuddhaButton" method="_on_los_angeles_karma_inc"]
+[connection signal="karma_reset" from="." to="BuddhaButton" method="_on_los_angeles_karma_reset"]
 [connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
 [connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
+[connection signal="karma_used" from="Player" to="." method="_on_player_karma_used"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]
+[connection signal="timeout" from="LABuddhaTimer" to="." method="_on_la_buddha_timer_timeout"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://332wphu7u5rs"]
+[gd_scene load_steps=9 format=3 uid="uid://332wphu7u5rs"]
 
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
 [ext_resource type="PackedScene" uid="uid://rghfhjwvr3oi" path="res://src/maps/map_assets/dallas_tile.tscn" id="2_hooha"]
 [ext_resource type="FontFile" uid="uid://45vc1sryqawd" path="res://src/maps/map_assets/DallasFont.ttf" id="3_eqndm"]
 [ext_resource type="Texture2D" uid="uid://c0ymv8820etes" path="res://sprites/props/exit_car.png" id="4_1qipa"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
+[ext_resource type="PackedScene" uid="uid://iacqgbevby6i" path="res://src/effects/buddha_button.tscn" id="6_5quww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8atf8"]
 size = Vector2(155, 106.253)
@@ -86,7 +87,18 @@ autostart = true
 wait_time = 3.0
 autostart = true
 
+[node name="BuddhaButton" parent="." instance=ExtResource("6_5quww")]
+
+[node name="DallasBuddhaTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="karma_activate" from="." to="Player" method="_on_dallas_karma_activate"]
+[connection signal="karma_activate" from="." to="BuddhaButton" method="_on_dallas_karma_activate"]
+[connection signal="karma_inc" from="." to="BuddhaButton" method="_on_dallas_karma_inc"]
+[connection signal="karma_reset" from="." to="BuddhaButton" method="_on_dallas_karma_reset"]
 [connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
 [connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
+[connection signal="karma_used" from="Player" to="." method="_on_player_karma_used"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]
+[connection signal="timeout" from="DallasBuddhaTimer" to="." method="_on_dallas_buddha_timer_timeout"]

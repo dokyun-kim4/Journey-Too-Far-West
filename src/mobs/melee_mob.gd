@@ -9,6 +9,8 @@ func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	var distance = global_position.distance_to(player.global_position)
 	velocity = direction * 100.0
+	if velocity.length() > 0:
+			%Mob.play()
 	if distance <= REPEL:
 		direction = -direction
 		velocity = direction * 100.0
