@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdgg18fhh31kw"]
+[gd_scene load_steps=15 format=3 uid="uid://cdgg18fhh31kw"]
 
 [ext_resource type="Script" path="res://src/mobs/melee_mob.gd" id="1_3xfpx"]
 [ext_resource type="Texture2D" uid="uid://dwvtn5gldfyxy" path="res://sprites/mobs/mob_walk_forward.png" id="2_7rxhk"]
+[ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="2_s1lpl"]
 [ext_resource type="PackedScene" uid="uid://dj5sjxfbbt6vc" path="res://src/enemy_weapon/bat.tscn" id="3_bfwkv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv73y"]
@@ -77,6 +78,11 @@ collision_layer = 2
 collision_mask = 3
 platform_floor_layers = 4294967040
 script = ExtResource("1_3xfpx")
+
+[node name="WukongShadow" type="Sprite2D" parent="."]
+modulate = Color(0.494118, 0.494118, 0.494118, 1)
+position = Vector2(0, 24)
+texture = ExtResource("2_s1lpl")
 
 [node name="Mob" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

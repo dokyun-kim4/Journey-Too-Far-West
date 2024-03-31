@@ -9,5 +9,6 @@ position = Vector2(62, -1)
 [node name="Explosion" type="Sprite2D" parent="."]
 visibility_layer = 128
 position = Vector2(-41, 22)
+rotation = 0.849959
 scale = Vector2(0.0282, 0.0287227)
 texture = ExtResource("1_dcj0t")
