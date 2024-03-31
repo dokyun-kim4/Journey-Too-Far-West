@@ -51,3 +51,9 @@ func _physics_process(delta):
 
 func _on_brooklyn_karma_activate():
 	karma_enabled = true
+	
+func take_damage():
+	health -= 1
+	
+	if health == 0:
+		player_dead.emit()
