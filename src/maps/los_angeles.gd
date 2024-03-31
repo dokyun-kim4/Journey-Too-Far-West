@@ -1,4 +1,4 @@
-# DALLAS SCRIPT
+# LOS ANGELES SCRIPT
 extends Node2D
 
 const MIN_SPAWN_TIME = 2.0
@@ -12,12 +12,12 @@ var stage_clear = false
 
 func _ready():
 	%Car.hide()
-	%city_name.show()
+	%CityName.show()
 
 func _physics_process(delta):
 	if car_activate == true and stage_clear == true:
 		if Input.is_action_just_pressed("next_level"):
-			var next_scene = load("res://src/maps/los_angeles.tscn")
+			var next_scene = load("res://src/maps/ending.tscn")
 			get_tree().change_scene_to_packed(next_scene)
 
 func spawn_mob():
@@ -29,7 +29,7 @@ func spawn_mob():
 	new_mob.mob_dead.connect(_on_mob_dead)
 
 func _on_title_timer_timeout():
-	%city_name.hide()
+	%CityName.hide()
 	
 func _on_area_2d_body_entered(body):
 	car_activate = true
@@ -50,4 +50,5 @@ func _on_mob_dead():
 		%Car.show()
 		stage_clear = true
 
-
+func _on_display_timer_timeout():
+	%CityName.hide()

@@ -33,14 +33,22 @@ text = "Welcome to Dallas"
 unique_name_in_owner = true
 collision_layer = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="Car"]
-position = Vector2(113, 577)
-scale = Vector2(0.0952995, 0.0952995)
-texture = ExtResource("2_r2gj2")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
 position = Vector2(104.5, 577)
 shape = SubResource("RectangleShape2D_8atf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Car"]
+position = Vector2(113, 577)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("2_r2gj2")
+
+[node name="CarInstruction" type="Label" parent="Car"]
+offset_left = 79.0
+offset_top = 624.0
+offset_right = 132.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[Enter]"
 
 [node name="Player" parent="." instance=ExtResource("4_peklx")]
 position = Vector2(1059, 590)
