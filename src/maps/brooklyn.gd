@@ -6,7 +6,7 @@ signal karma_activate
 const MIN_SPAWN_TIME = 2.0
 const MAX_SPAWN_TIME = 5.0
 const MAX_MOBS = 10
-const KARMA_MAX = 10
+const KARMA_MAX = 1
 
 var mob_count = 0
 var killed = 0

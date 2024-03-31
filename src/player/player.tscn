@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_qlmnk"]
 [ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="2_vvsa1"]
 [ext_resource type="PackedScene" uid="uid://bxv12h3jfs1fb" path="res://src/gun/gun.tscn" id="3_4wgbs"]
-[ext_resource type="Texture2D" uid="uid://bsuo4g5v1d811" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_jtqr2"]
+[ext_resource type="Texture2D" uid="uid://y4om2cfym24l" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_jtqr2"]
 [ext_resource type="Script" path="res://src/player/Wukong_Animations.gd" id="6_ksf8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85nlk"]

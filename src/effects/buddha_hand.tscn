@@ -1,17 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq7r7cjgo37e5"]
+[gd_scene load_steps=4 format=3 uid="uid://ctkvh7wyx6hoi"]
 
 [ext_resource type="Script" path="res://src/effects/buddha_hand.gd" id="1_83njv"]
 [ext_resource type="Texture2D" uid="uid://cgtpvyo1ee1ub" path="res://hand_temp_png.png" id="1_es0v4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vvnbq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_vro7x"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="BuddhaHand" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_83njv")
 
 [node name="HandTempPng" type="Sprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.217071, 0.217071)
+position = Vector2(3, 3)
+scale = Vector2(0.23393, 0.23393)
 texture = ExtResource("1_es0v4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vvnbq")
+shape = SubResource("CircleShape2D_vro7x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

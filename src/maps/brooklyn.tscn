@@ -76,7 +76,7 @@ curve = SubResource("Curve2D_1wftv")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
 position = Vector2(42, 25)
-rotation = 0.0324685
+rotation = 0.0324686
 
 [node name="SpawnTimer" type="Timer" parent="."]
 unique_name_in_owner = true
