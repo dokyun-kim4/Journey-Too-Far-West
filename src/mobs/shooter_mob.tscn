@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dar8dv70jtqea"]
+[gd_scene load_steps=16 format=3 uid="uid://dar8dv70jtqea"]
 
 [ext_resource type="Script" path="res://src/mobs/shooter_mob.gd" id="1_8xcng"]
 [ext_resource type="Texture2D" uid="uid://dwvtn5gldfyxy" path="res://sprites/mobs/mob_walk_forward.png" id="2_bs2ih"]
 [ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="2_claf6"]
 [ext_resource type="PackedScene" uid="uid://bc01xyxgohtl" path="res://src/enemy_weapon/enemy_gun.tscn" id="2_rbo1e"]
+[ext_resource type="AudioStream" uid="uid://drxcm6c1636om" path="res://sfx/enemy_death_sound.mp3" id="5_gd4rg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0n5t"]
 atlas = ExtResource("2_bs2ih")
@@ -98,3 +99,9 @@ position = Vector2(0, -1)
 visible = false
 position = Vector2(-2, 0)
 shape = SubResource("CapsuleShape2D_tereh")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gd4rg")
+volume_db = 10.0
+
+[connection signal="finished" from="DeathSound" to="." method="_on_death_sound_finished"]

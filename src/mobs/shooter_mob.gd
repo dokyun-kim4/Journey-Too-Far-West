@@ -4,6 +4,7 @@ var health = 3
 const REPEL = 300
 
 @onready var player = get_node("../Player")
+@onready var death_sound = $DeathSound
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -19,7 +20,7 @@ func _physics_process(delta):
 func take_damage_mob():
 	health -= 1
 	if health == 0:
-		queue_free()
+		death_sound.play()
 		explosion()
 
 func explosion():
@@ -31,5 +32,9 @@ func explosion():
 
 func take_damage_buddha():
 	health = 0
-	queue_free()
+	death_sound.play()
 	explosion()
+
+
+func _on_death_sound_finished():
+	queue_free()
