@@ -9,7 +9,7 @@ func _physics_process(delta):
 	if targets_in_range.size() > 0:
 		var cur_target = targets_in_range[0]
 		look_at(cur_target.global_position)
-		%EnemyShoot.start(0.005)
+		%EnemyShoot.start(0.001)
 	
 func shoot():
 	var new_bullet = preload("res://src/bullet/enemy_bullet.tscn").instantiate()
@@ -21,4 +21,4 @@ func shoot():
 
 func _on_enemy_shoot_timeout():
 	shoot()
-	%EnemyShoot.stop()
+	$EnemyShoot.stop()

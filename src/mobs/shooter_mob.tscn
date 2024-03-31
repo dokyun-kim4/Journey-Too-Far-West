@@ -19,7 +19,7 @@ scale = Vector2(0.0532227, 0.0532227)
 texture = ExtResource("1_q8bli")
 
 [node name="enemy_gun" parent="." instance=ExtResource("2_rbo1e")]
-position = Vector2(1, 2)
+position = Vector2(-28, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
