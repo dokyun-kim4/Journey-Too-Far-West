@@ -6,7 +6,7 @@ signal karma_activate
 const MIN_SPAWN_TIME = 2.0
 const MAX_SPAWN_TIME = 5.0
 const MAX_MOBS = 10
-const KARMA_MAX = 10
+const KARMA_MAX = 1
 
 var mob_count = 0
 var killed = 0
@@ -67,7 +67,7 @@ func _on_brooklyn_player_karma_used():
 	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
 	buddha_hand.global_position = get_global_mouse_position()
 	add_child(buddha_hand)
-	%BuddhaTimer.start(5)
+	%BuddhaTimer.start(1.0)
 
 func _on_buddha_timer_timeout():
 	%BuddhaTimer.stop()
