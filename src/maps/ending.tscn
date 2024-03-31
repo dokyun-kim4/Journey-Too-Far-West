@@ -86,7 +86,7 @@ text = "Exit Game"
 
 [node name="Car" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1043, 437)
+position = Vector2(1043, 434)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_jsf15")
 
