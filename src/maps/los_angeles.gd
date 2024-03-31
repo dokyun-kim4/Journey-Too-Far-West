@@ -68,6 +68,7 @@ func _on_player_karma_used():
 	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
 	buddha_hand.global_position = get_global_mouse_position()
 	add_child(buddha_hand)
+	buddha_hand.buddha_slam.play()
 	%LABuddhaTimer.start()
 	%LABuddhaTimer.wait_time = 10
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctkvh7wyx6hoi"]
+[gd_scene load_steps=18 format=3 uid="uid://ctkvh7wyx6hoi"]
 
 [ext_resource type="Script" path="res://src/effects/buddha_hand.gd" id="1_83njv"]
 [ext_resource type="Texture2D" uid="uid://cgtpvyo1ee1ub" path="res://hand_temp_png.png" id="1_es0v4"]
 [ext_resource type="Texture2D" uid="uid://1guxskw1dde6" path="res://sprites/wukong/Buddha_Strike.png" id="3_68jhc"]
 [ext_resource type="Script" path="res://src/effects/BuddhaAnimation.gd" id="4_0j3tw"]
 [ext_resource type="Texture2D" uid="uid://ck4h0f3dalrin" path="res://sprites/wukong/Buddha_Strike_Imprint.png" id="5_rc7nt"]
+[ext_resource type="AudioStream" uid="uid://saibmiuiarmq" path="res://sfx/buddha_slam.wav" id="6_f7l7i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vro7x"]
 radius = 112.787
@@ -112,5 +113,8 @@ texture_filter = 1
 position = Vector2(-3, 9)
 scale = Vector2(2.86719, 2.86719)
 texture = ExtResource("5_rc7nt")
+
+[node name="BuddhaSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_f7l7i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

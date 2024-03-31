@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var buddha_slam = $BuddhaSound
+
 func _on_body_entered(body):
 	if body.has_method("take_damage_buddha"):
 		body.take_damage_buddha()

@@ -66,7 +66,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tereh"]
@@ -89,6 +89,7 @@ texture_filter = 1
 position = Vector2(-1, -35)
 scale = Vector2(3.047, 3.047)
 sprite_frames = SubResource("SpriteFrames_pu56l")
+frame_progress = 0.539152
 
 [node name="enemy_gun" parent="." instance=ExtResource("2_rbo1e")]
 position = Vector2(0, -1)

@@ -66,7 +66,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnhpf"]
@@ -90,6 +90,7 @@ texture_filter = 1
 position = Vector2(0, -24)
 scale = Vector2(3.04688, 3.04688)
 sprite_frames = SubResource("SpriteFrames_k556n")
+frame_progress = 0.11216
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
