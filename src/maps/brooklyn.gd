@@ -2,11 +2,13 @@
 extends Node2D
 
 signal karma_activate
+signal karma_inc
+signal karma_reset
 
 const MIN_SPAWN_TIME = 2.0
 const MAX_SPAWN_TIME = 5.0
 const MAX_MOBS = 10
-const KARMA_MAX = 1
+const KARMA_MAX = 8
 
 var mob_count = 0
 var killed = 0
@@ -20,7 +22,6 @@ var buddha_hand
 func _ready():
 	%Car.hide()
 	%CityName.show()
-	#%BrooklynPlayer.karma_used.connect(_on_karma_used())
 
 func _physics_process(delta):
 	if car_activate == true and stage_clear == true:
@@ -56,14 +57,16 @@ func _on_spawn_timer_timeout():
 
 func _on_mob_dead():
 	killed += 1
-	if karma_kill < 10:
+	if karma_kill < KARMA_MAX:
 		karma_kill += 1
+		karma_inc.emit()
 	if killed == MAX_MOBS:
 		%Car.show()
 		stage_clear = true
 
 func _on_brooklyn_player_karma_used():
 	karma_kill = 0
+	karma_reset.emit()
 	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
 	buddha_hand.global_position = get_global_mouse_position()
 	add_child(buddha_hand)

@@ -53,6 +53,8 @@ func _physics_process(delta):
 	
 	if health <= 0.0:
 		player_dead.emit()
+		var next_scene = load("res://src/maps/death.tscn")
+		get_tree().change_scene_to_packed(next_scene)
 
 func _on_brooklyn_karma_activate():
 	karma_enabled = true
@@ -63,6 +65,8 @@ func take_damage():
 	
 	if health == 0:
 		player_dead.emit()
+		var next_scene = load("res://src/maps/death.tscn")
+		get_tree().change_scene_to_packed(next_scene)
 
 func _on_sprint_timer_timeout():
 	sprint_enabled = true

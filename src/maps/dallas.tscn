@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
 [ext_resource type="PackedScene" uid="uid://rghfhjwvr3oi" path="res://src/maps/map_assets/dallas_tile.tscn" id="2_hooha"]
-[ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="2_r2gj2"]
 [ext_resource type="FontFile" uid="uid://45vc1sryqawd" path="res://src/maps/map_assets/DallasFont.ttf" id="3_eqndm"]
+[ext_resource type="Texture2D" uid="uid://c0ymv8820etes" path="res://sprites/props/exit_car.png" id="4_1qipa"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8atf8"]
-size = Vector2(153, 102.5)
+size = Vector2(155, 106.253)
 
 [sub_resource type="Curve2D" id="Curve2D_7xmie"]
 _data = {
@@ -39,22 +39,24 @@ position = Vector2(2, -16)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
-position = Vector2(87.5, 561.003)
+position = Vector2(93.5, 559.126)
 shape = SubResource("RectangleShape2D_8atf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Car"]
 position = Vector2(96, 561.003)
-scale = Vector2(0.085, 0.085)
-texture = ExtResource("2_r2gj2")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_1qipa")
 
 [node name="CarInstruction" type="Label" parent="Car"]
-offset_left = 62.0
-offset_top = 608.003
-offset_right = 115.0
-offset_bottom = 631.003
+texture_filter = 1
+offset_left = 68.0
+offset_top = 608.0
+offset_right = 142.0
+offset_bottom = 640.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_eqndm")
+theme_override_font_sizes/font_size = 25
 text = "[Enter]"
-metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_peklx")]
 position = Vector2(1059, 590)

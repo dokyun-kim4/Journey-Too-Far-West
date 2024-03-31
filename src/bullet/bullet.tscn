@@ -22,4 +22,9 @@ position = Vector2(2, 2)
 scale = Vector2(2.42611, 2.42611)
 texture = ExtResource("2_hwewe")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(5, 1.61647)
+scale = Vector2(3.3179, 2.17294)
+texture = ExtResource("2_hwewe")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
