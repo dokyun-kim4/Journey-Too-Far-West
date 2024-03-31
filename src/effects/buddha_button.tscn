@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://iacqgbevby6i"]
+
+[ext_resource type="Texture2D" uid="uid://br5h0p83wsfye" path="res://button_temp.png" id="1_gup8u"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ButtonTemp" type="Sprite2D" parent="."]
+position = Vector2(1247, 708)
+scale = Vector2(0.635593, 0.635593)
+texture = ExtResource("1_gup8u")
