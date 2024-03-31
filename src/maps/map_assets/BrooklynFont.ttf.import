@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://45vc1sryqawd"
-path="res://.godot/imported/DallasFont.ttf-2bfe5b2256e37f3ed6634f3a18326051.fontdata"
+uid="uid://c6toawt085tj1"
+path="res://.godot/imported/BrooklynFont.ttf-7cfb3f44ef9d3777d0d0b446a56ea9a6.fontdata"
 
 [deps]
 
-source_file="res://src/maps/DallasFont.ttf"
-dest_files=["res://.godot/imported/DallasFont.ttf-2bfe5b2256e37f3ed6634f3a18326051.fontdata"]
+source_file="res://src/maps/map_assets/BrooklynFont.ttf"
+dest_files=["res://.godot/imported/BrooklynFont.ttf-7cfb3f44ef9d3777d0d0b446a56ea9a6.fontdata"]
 
 [params]
 
