@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/maps/start.gd" id="1_0fpax"]
 [ext_resource type="PackedScene" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
 [ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_07k8b"]
-[ext_resource type="Texture2D" uid="uid://y4om2cfym24l" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
-[ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="5_0qa8r"]
+[ext_resource type="Texture2D" uid="uid://ccxn53uauk2ac" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
+[ext_resource type="Texture2D" uid="uid://d1xvscioy47fh" path="res://sprites/wukong/Wukong_Shadow.png" id="5_0qa8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdtec"]
 atlas = ExtResource("4_uwkmj")
@@ -111,29 +111,35 @@ autowrap_mode = 2
 
 [node name="quit" type="Button" parent="."]
 texture_filter = 1
-offset_left = 928.0
-offset_top = 462.0
-offset_right = 1074.0
-offset_bottom = 541.0
+offset_left = 957.0
+offset_top = 493.0
+offset_right = 1103.0
+offset_bottom = 572.0
 theme_override_fonts/font = ExtResource("3_07k8b")
 theme_override_font_sizes/font_size = 70
 text = "Quit"
 
+[node name="controls" type="Button" parent="."]
+texture_filter = 1
+offset_left = 896.0
+offset_top = 409.0
+offset_right = 1104.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("3_07k8b")
+theme_override_font_sizes/font_size = 70
+text = "controls
+"
+
 [node name="start" type="Button" parent="."]
 texture_filter = 1
-offset_left = 928.0
-offset_top = 352.0
-offset_right = 1074.0
-offset_bottom = 431.0
+offset_left = 957.0
+offset_top = 325.0
+offset_right = 1103.0
+offset_bottom = 404.0
 theme_override_fonts/font = ExtResource("3_07k8b")
 theme_override_font_sizes/font_size = 70
 text = "Start
 "
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_colors/table_border = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.466667, 0.466667, 0.466667, 1)
@@ -149,4 +155,5 @@ scale = Vector2(6.1875, 6.1875)
 sprite_frames = SubResource("SpriteFrames_0f7w0")
 
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]

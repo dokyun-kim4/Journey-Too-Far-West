@@ -9,3 +9,7 @@ func _on_quit_pressed():
 func _on_start_pressed():
 	var next_scene = load("res://src/maps/brooklyn.tscn")
 	get_tree().change_scene_to_packed(next_scene)
+	
+func _on_controls_pressed():
+	var next_scene = load("res://src/maps/controls.tscn")
+	get_tree().change_scene_to_packed(next_scene)

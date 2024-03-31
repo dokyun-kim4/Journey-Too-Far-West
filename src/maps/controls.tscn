@@ -1,0 +1,180 @@
+[gd_scene load_steps=16 format=3 uid="uid://dpo10nx22hydk"]
+
+[ext_resource type="Script" path="res://src/maps/controls.gd" id="1_riqti"]
+[ext_resource type="PackedScene" path="res://src/maps/map_assets/ending_tile.tscn" id="2_4hq1j"]
+[ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_vohb1"]
+[ext_resource type="Texture2D" uid="uid://d1xvscioy47fh" path="res://sprites/wukong/Wukong_Shadow.png" id="4_08tft"]
+[ext_resource type="Texture2D" uid="uid://ccxn53uauk2ac" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_47qgd"]
+[ext_resource type="Texture2D" uid="uid://b3o17dtjfh56j" path="res://sprites/props/mouse-click-icon.png" id="6_bixfa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdtec"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0yo0"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg5qj"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wdd7"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo74k"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w0vr"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc7e4"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8ovy"]
+atlas = ExtResource("5_47qgd")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f7w0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdtec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0yo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg5qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wdd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo74k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w0vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc7e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8ovy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="controls" type="Node2D"]
+script = ExtResource("1_riqti")
+
+[node name="TileMap" parent="." instance=ExtResource("2_4hq1j")]
+position = Vector2(3636, -460)
+scale = Vector2(3.2, 3.2)
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+offset_left = 45.0
+offset_top = 97.0
+offset_right = 745.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 100
+text = "Controls"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(883, 432)
+scale = Vector2(6.77771, 3.78125)
+texture = ExtResource("4_08tft")
+
+[node name="StartWukong" type="AnimatedSprite2D" parent="Sprite2D"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(2.50822, -59.7686)
+scale = Vector2(2.08421, 3.73585)
+sprite_frames = SubResource("SpriteFrames_0f7w0")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 670.0
+offset_top = 474.0
+offset_right = 1109.0
+offset_bottom = 578.0
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 70
+text = "Back to Main Menu"
+
+[node name="S" type="Button" parent="."]
+offset_left = 141.0
+offset_top = 355.667
+offset_right = 212.0
+offset_bottom = 414.667
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "S"
+
+[node name="D" type="Button" parent="."]
+offset_left = 225.0
+offset_top = 355.667
+offset_right = 296.0
+offset_bottom = 414.667
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "D"
+
+[node name="A" type="Button" parent="."]
+offset_left = 59.0
+offset_top = 354.667
+offset_right = 130.0
+offset_bottom = 413.667
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "A"
+
+[node name="W" type="Button" parent="."]
+offset_left = 141.0
+offset_top = 286.667
+offset_right = 212.0
+offset_bottom = 345.667
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "W"
+
+[node name="WASD" type="Label" parent="."]
+texture_filter = 1
+offset_left = 108.0
+offset_top = 422.0
+offset_right = 267.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 100
+text = "Move"
+
+[node name="Mouse-click-icon" type="Sprite2D" parent="."]
+position = Vector2(438, 348)
+scale = Vector2(0.260417, 0.260417)
+texture = ExtResource("6_bixfa")
+
+[node name="WASD2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 378.375
+offset_top = 420.0
+offset_right = 553.375
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vohb1")
+theme_override_font_sizes/font_size = 100
+text = "shoot"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
