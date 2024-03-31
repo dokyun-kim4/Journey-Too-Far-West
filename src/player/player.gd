@@ -6,6 +6,7 @@ signal karma_used
 var health = 100.0
 var cur_facing = Vector2.RIGHT
 var karma_enabled = false
+var sprint_enabled = true
 
 const PLAYER_BASE_SPEED = 350
 const SPRINT_MULTIPLIER = 2
@@ -17,8 +18,14 @@ func _physics_process(delta):
 	if abs(direction.x) > 0 or abs(direction.y) > 0:
 		cur_facing = direction
 	
-	if Input.is_action_pressed("sprint"):
+	if sprint_enabled and Input.is_action_pressed("sprint"):
 		velocity = cur_facing * PLAYER_BASE_SPEED * SPRINT_MULTIPLIER
+		if %SprintTimer.time_left == 0:
+			%SprintTimer.start(4.0)
+			
+		print(%SprintTimer.time_left)
+		if %SprintTimer.time_left < 3.5 or Input.is_action_just_released("sprint"):
+			sprint_enabled = false
 	else: 
 		velocity = direction * PLAYER_BASE_SPEED 
 	move_and_slide()
@@ -56,3 +63,6 @@ func take_damage():
 	
 	if health == 0:
 		player_dead.emit()
+
+func _on_sprint_timer_timeout():
+	sprint_enabled = true
