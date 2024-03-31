@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c6toawt085tj1" path="res://src/maps/map_assets/BrooklynFont.ttf" id="3_gmsrs"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="3_wbrwo"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_sksiu"]
-[ext_resource type="Texture2D" uid="uid://br5h0p83wsfye" path="res://button_temp.png" id="5_bvij6"]
+[ext_resource type="PackedScene" uid="uid://iacqgbevby6i" path="res://src/effects/buddha_button.tscn" id="6_6j0ec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kb8b"]
 size = Vector2(156.504, 89.5)
@@ -87,18 +87,16 @@ autostart = true
 wait_time = 2.0
 autostart = true
 
+[node name="BuddhaButton" parent="." instance=ExtResource("6_6j0ec")]
+
 [node name="BuddhaTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="ButtonTemp" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.2)
-light_mask = 0
-position = Vector2(1071, 103)
-scale = Vector2(0.382768, 0.382768)
-texture = ExtResource("5_bvij6")
-
 [connection signal="karma_activate" from="." to="Player" method="_on_brooklyn_karma_activate"]
+[connection signal="karma_activate" from="." to="BuddhaButton" method="_on_brooklyn_karma_activate"]
+[connection signal="karma_inc" from="." to="BuddhaButton" method="_on_brooklyn_karma_inc"]
+[connection signal="karma_reset" from="." to="BuddhaButton" method="_on_brooklyn_karma_reset"]
 [connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
 [connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
 [connection signal="karma_used" from="Player" to="." method="_on_brooklyn_player_karma_used"]

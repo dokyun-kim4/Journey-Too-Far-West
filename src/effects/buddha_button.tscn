@@ -1,10 +1,87 @@
-[gd_scene load_steps=2 format=3 uid="uid://iacqgbevby6i"]
+[gd_scene load_steps=13 format=3 uid="uid://iacqgbevby6i"]
 
-[ext_resource type="Texture2D" uid="uid://br5h0p83wsfye" path="res://button_temp.png" id="1_gup8u"]
+[ext_resource type="Texture2D" uid="uid://cy33ioqmdv1k" path="res://sprites/props/buddha_charge_icon.png" id="1_6bgtt"]
+[ext_resource type="Script" path="res://src/effects/buddha_button.gd" id="1_l53ee"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdiww"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(0, 0, 32, 32)
 
-[node name="ButtonTemp" type="Sprite2D" parent="."]
-position = Vector2(1247, 708)
-scale = Vector2(0.635593, 0.635593)
-texture = ExtResource("1_gup8u")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mt2y"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vmnw"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ien3t"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho5qm"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6bv7"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olhqr"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usxcg"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrse0"]
+atlas = ExtResource("1_6bgtt")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hswen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdiww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mt2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vmnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ien3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho5qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6bv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olhqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usxcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrse0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BuddhaButton" type="CanvasLayer"]
+script = ExtResource("1_l53ee")
+
+[node name="BuddhaButtonAnimation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.580392)
+texture_filter = 1
+position = Vector2(1039, 138)
+scale = Vector2(2.59375, 2.59375)
+sprite_frames = SubResource("SpriteFrames_hswen")
+frame_progress = 0.398329
