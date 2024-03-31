@@ -1,5 +1,5 @@
 extends Area2D
-
+@onready var gun_sound = $"../GunSound"
 func _physics_process(delta):
 	%WeaponAnimation.gun_idle()
 	look_at(get_global_mouse_position())
@@ -15,6 +15,7 @@ func _physics_process(delta):
 		%ShootTimer.start(0.05)
 	
 func shoot():
+	gun_sound.play()
 	var new_bullet = preload("res://src/bullet/bullet.tscn").instantiate()
 	new_bullet.global_position = %ShootPoint.global_position
 	new_bullet.global_rotation = %ShootPoint.global_rotation
