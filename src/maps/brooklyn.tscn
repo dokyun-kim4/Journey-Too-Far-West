@@ -1,12 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://c8xx7oclrtebh"]
 
 [ext_resource type="Script" path="res://src/maps/brooklyn.gd" id="1_p8xfk"]
-[ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/tile_map.tscn" id="2_upw0n"]
+[ext_resource type="FontFile" uid="uid://c6toawt085tj1" path="res://src/maps/map_assets/BrooklynFont.ttf" id="3_gmsrs"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="3_wbrwo"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_sksiu"]
 [ext_resource type="Texture2D" uid="uid://br5h0p83wsfye" path="res://button_temp.png" id="5_bvij6"]
-
-[sub_resource type="SystemFont" id="SystemFont_1ank3"]
+[ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/map_assets/brooklyn_tile.tscn" id="6_ncwih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kb8b"]
 size = Vector2(156.504, 89.5)
@@ -20,7 +19,7 @@ point_count = 6
 [node name="brooklyn" type="Node2D"]
 script = ExtResource("1_p8xfk")
 
-[node name="TileMap" parent="." instance=ExtResource("2_upw0n")]
+[node name="TileMap" parent="." instance=ExtResource("6_ncwih")]
 position = Vector2(3636, -460)
 scale = Vector2(3.2, 3.2)
 
@@ -28,15 +27,15 @@ scale = Vector2(3.2, 3.2)
 unique_name_in_owner = true
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 268.0
-offset_top = 54.0
-offset_right = 899.0
-offset_bottom = 172.0
+offset_left = 73.0
+offset_top = 301.0
+offset_right = 1060.0
+offset_bottom = 386.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_1ank3")
-theme_override_font_sizes/font_size = 61
+theme_override_fonts/font = ExtResource("3_gmsrs")
+theme_override_font_sizes/font_size = 90
 text = "Welcome to Brooklyn"
 
 [node name="Car" type="Area2D" parent="."]
