@@ -1,6 +1,7 @@
 extends Area2D
 
 func _physics_process(delta):
+	%WeaponAnimation.gun_idle()
 	look_at(get_global_mouse_position())
 	if global_rotation > -PI/2 and global_rotation < PI/2:
 		scale.y = 1

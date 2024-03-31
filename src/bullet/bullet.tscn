@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://coqbeigy8kuxf"]
 
 [ext_resource type="Script" path="res://src/bullet/bullet.gd" id="1_1bkk4"]
-[ext_resource type="Texture2D" uid="uid://dwmb4a82ox54" path="res://bullet_temp.png" id="1_hqnm2"]
+[ext_resource type="Texture2D" uid="uid://b8cvqdgjbjulk" path="res://sprites/props/player_bullet.png" id="2_hwewe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfpsf"]
-radius = 64.195
+radius = 29.0689
 
 [node name="Bullet" type="Area2D"]
 top_level = true
@@ -13,12 +13,12 @@ collision_mask = 6
 script = ExtResource("1_1bkk4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -1)
 shape = SubResource("CircleShape2D_wfpsf")
 
 [node name="BulletTemp" type="Sprite2D" parent="."]
-position = Vector2(5, -1)
-scale = Vector2(0.102214, 0.102214)
-texture = ExtResource("1_hqnm2")
+texture_filter = 1
+position = Vector2(2, 2)
+scale = Vector2(2.42611, 2.42611)
+texture = ExtResource("2_hwewe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
