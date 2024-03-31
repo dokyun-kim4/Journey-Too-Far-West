@@ -34,21 +34,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 61
 text = "Welcome to Brooklyn"
 
-[node name="car" type="Area2D" parent="."]
+[node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
 visible = false
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
 position = Vector2(83, 310)
 shape = SubResource("RectangleShape2D_1kb8b")
 
-[node name="Sprite2D" type="Sprite2D" parent="car"]
+[node name="Sprite2D" type="Sprite2D" parent="Car"]
 position = Vector2(87, 306)
 scale = Vector2(0.0849968, 0.0849968)
 texture = ExtResource("3_wbrwo")
 
-[node name="car_instruction" type="Label" parent="car"]
+[node name="car_instruction" type="Label" parent="Car"]
 offset_left = 55.0
 offset_top = 349.0
 offset_right = 108.0
@@ -60,7 +60,6 @@ text = "[Enter]"
 position = Vector2(1002, 554)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_right = 1152
@@ -82,7 +81,8 @@ autostart = true
 wait_time = 2.0
 autostart = true
 
-[connection signal="body_entered" from="car" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="car" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Car" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Car" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="TitleTimer" to="." method="_on_title_timer_timeout"]
