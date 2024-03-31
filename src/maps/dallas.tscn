@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://332wphu7u5rs"]
+[gd_scene load_steps=8 format=3 uid="uid://332wphu7u5rs"]
 
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/tile_map.tscn" id="1_b0wji"]
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="2_r2gj2"]
+[ext_resource type="FontFile" uid="uid://45vc1sryqawd" path="res://src/maps/DallasFont.ttf" id="3_ps2ro"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8atf8"]
@@ -18,16 +19,19 @@ point_count = 5
 script = ExtResource("1_dgcns")
 
 [node name="TileMap" parent="." instance=ExtResource("1_b0wji")]
+position = Vector2(3636, -460)
+scale = Vector2(3.2, 3.2)
 
 [node name="CityName" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 302.0
-offset_top = 24.0
-offset_right = 862.0
-offset_bottom = 108.0
+offset_left = 85.0
+offset_top = 260.0
+offset_right = 1045.0
+offset_bottom = 396.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 61
-text = "Welcome to Dallas"
+theme_override_fonts/font = ExtResource("3_ps2ro")
+theme_override_font_sizes/font_size = 135
+text = "WELCOME TO DALLAS"
 
 [node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -35,19 +39,19 @@ position = Vector2(2, -16)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
-position = Vector2(104.5, 577)
+position = Vector2(87.5, 561.003)
 shape = SubResource("RectangleShape2D_8atf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Car"]
-position = Vector2(113, 577)
+position = Vector2(96, 561.003)
 scale = Vector2(0.085, 0.085)
 texture = ExtResource("2_r2gj2")
 
 [node name="CarInstruction" type="Label" parent="Car"]
-offset_left = 79.0
-offset_top = 624.0
-offset_right = 132.0
-offset_bottom = 647.0
+offset_left = 62.0
+offset_top = 608.003
+offset_right = 115.0
+offset_bottom = 631.003
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "[Enter]"
 metadata/_edit_use_anchors_ = true
@@ -71,11 +75,11 @@ rotation = -0.00191387
 
 [node name="SpawnTimer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 3.0
+wait_time = 4.0
 autostart = true
 
 [node name="DisplayTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
