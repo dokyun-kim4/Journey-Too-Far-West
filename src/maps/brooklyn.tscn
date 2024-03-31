@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8xx7oclrtebh"]
+[gd_scene load_steps=11 format=3 uid="uid://c8xx7oclrtebh"]
 
 [ext_resource type="Script" path="res://src/maps/brooklyn.gd" id="1_p8xfk"]
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/map_assets/los_angeles_tile.tscn" id="2_nqvwb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_sksiu"]
 [ext_resource type="PackedScene" uid="uid://iacqgbevby6i" path="res://src/effects/buddha_button.tscn" id="6_6j0ec"]
 [ext_resource type="Texture2D" uid="uid://de8n4lc07uk24" path="res://sprites/mobs/light.png" id="6_ttf63"]
+[ext_resource type="PackedScene" uid="uid://bxsyndg4mmwi1" path="res://src/music/battle_music.tscn" id="8_mgnxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kb8b"]
 size = Vector2(152, 101)
@@ -130,6 +131,8 @@ texture = ExtResource("6_ttf63")
 position = Vector2(892, 60)
 scale = Vector2(0.241577, 0.234308)
 texture = ExtResource("6_ttf63")
+
+[node name="BattleMusic" parent="." instance=ExtResource("8_mgnxu")]
 
 [connection signal="karma_activate" from="." to="Player" method="_on_brooklyn_karma_activate"]
 [connection signal="karma_activate" from="." to="BuddhaButton" method="_on_brooklyn_karma_activate"]

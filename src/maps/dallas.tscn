@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://332wphu7u5rs"]
+[gd_scene load_steps=10 format=3 uid="uid://332wphu7u5rs"]
 
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
 [ext_resource type="PackedScene" uid="uid://rghfhjwvr3oi" path="res://src/maps/map_assets/dallas_tile.tscn" id="2_hooha"]
 [ext_resource type="FontFile" uid="uid://45vc1sryqawd" path="res://src/maps/map_assets/DallasFont.ttf" id="3_eqndm"]
-[ext_resource type="Texture2D" uid="uid://drni8kya8ufs7" path="res://sprites/props/exit_car.png" id="4_1qipa"]
+[ext_resource type="Texture2D" uid="uid://c0ymv8820etes" path="res://sprites/props/exit_car.png" id="4_1qipa"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
 [ext_resource type="PackedScene" uid="uid://iacqgbevby6i" path="res://src/effects/buddha_button.tscn" id="6_5quww"]
+[ext_resource type="PackedScene" uid="uid://bxsyndg4mmwi1" path="res://src/music/battle_music.tscn" id="7_brbjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8atf8"]
 size = Vector2(155, 106.253)
@@ -92,6 +93,8 @@ autostart = true
 
 [node name="DallasBuddhaTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="BattleMusic" parent="." instance=ExtResource("7_brbjo")]
 
 [connection signal="karma_activate" from="." to="Player" method="_on_dallas_karma_activate"]
 [connection signal="karma_activate" from="." to="BuddhaButton" method="_on_dallas_karma_activate"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://ctkvh7wyx6hoi"]
+[gd_scene load_steps=17 format=3 uid="uid://ctkvh7wyx6hoi"]
 
 [ext_resource type="Script" path="res://src/effects/buddha_hand.gd" id="1_83njv"]
-[ext_resource type="Texture2D" uid="uid://cgtpvyo1ee1ub" path="res://hand_temp_png.png" id="1_es0v4"]
 [ext_resource type="Texture2D" uid="uid://1guxskw1dde6" path="res://sprites/wukong/Buddha_Strike.png" id="3_68jhc"]
 [ext_resource type="Script" path="res://src/effects/BuddhaAnimation.gd" id="4_0j3tw"]
 [ext_resource type="Texture2D" uid="uid://ck4h0f3dalrin" path="res://sprites/wukong/Buddha_Strike_Imprint.png" id="5_rc7nt"]
@@ -92,7 +91,6 @@ script = ExtResource("1_83njv")
 visible = false
 position = Vector2(3, 3)
 scale = Vector2(0.23393, 0.23393)
-texture = ExtResource("1_es0v4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)

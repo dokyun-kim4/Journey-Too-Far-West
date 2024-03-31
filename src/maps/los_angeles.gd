@@ -31,7 +31,13 @@ func _physics_process(delta):
 		karma_activate.emit()
 
 func spawn_mob():
-	var new_mob = preload("res://src/mobs/melee_mob.tscn").instantiate()
+	var melee = randi() % 2 == 0
+	var mob_str
+	var new_mob
+	if melee:
+		new_mob = preload("res://src/mobs/melee_mob.tscn").instantiate()
+	else:
+		new_mob = preload("res://src/mobs/shooter_mob.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)

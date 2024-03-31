@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://q36jmet8kwi3"]
+[gd_scene load_steps=16 format=3 uid="uid://q36jmet8kwi3"]
 
 [ext_resource type="Script" path="res://src/maps/start.gd" id="1_0fpax"]
 [ext_resource type="PackedScene" uid="uid://si8x0dth8a8" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
 [ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_07k8b"]
 [ext_resource type="Texture2D" uid="uid://bsuo4g5v1d811" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
 [ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="5_0qa8r"]
+[ext_resource type="PackedScene" uid="uid://dnjww0a83hxl7" path="res://src/music/title_music.tscn" id="6_ythl6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdtec"]
 atlas = ExtResource("4_uwkmj")
@@ -98,7 +99,7 @@ theme_override_fonts/font = ExtResource("3_07k8b")
 theme_override_font_sizes/font_size = 70
 text = "A Lobo digital Game"
 
-[node name="Lobo2" type="Label" parent="."]
+[node name="Summary" type="Label" parent="."]
 offset_left = 24.0
 offset_top = 333.0
 offset_right = 901.0
@@ -153,6 +154,8 @@ texture_filter = 1
 position = Vector2(947, 187)
 scale = Vector2(6.1875, 6.1875)
 sprite_frames = SubResource("SpriteFrames_0f7w0")
+
+[node name="TitleMusic" parent="." instance=ExtResource("6_ythl6")]
 
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="controls" to="." method="_on_controls_pressed"]
