@@ -53,7 +53,6 @@ func _on_spawn_timer_timeout():
 		spawn_mob()
 		mob_count += 1
 		%SpawnTimer.wait_time = randf_range(MIN_SPAWN_TIME, MAX_SPAWN_TIME)
-		print("Time until next spawn: ", %SpawnTimer.wait_time)		
 
 func _on_mob_dead():
 	killed += 1
