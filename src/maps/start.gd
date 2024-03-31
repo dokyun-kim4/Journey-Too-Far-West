@@ -1,5 +1,8 @@
 extends Node2D
 
+func _physics_process(delta):
+	%StartWukong.play()
+	
 func _on_quit_pressed():
 	get_tree().quit()
 
