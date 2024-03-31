@@ -80,9 +80,14 @@ autostart = true
 wait_time = 2.0
 autostart = true
 
+[node name="BuddhaTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="karma_activate" from="." to="Player" method="_on_brooklyn_karma_activate"]
 [connection signal="body_entered" from="Car" to="." method="_on_car_body_entered"]
 [connection signal="body_exited" from="Car" to="." method="_on_car_body_exited"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="karma_used" from="Player" to="." method="_on_brooklyn_player_karma_used"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DisplayTimer" to="." method="_on_display_timer_timeout"]
+[connection signal="timeout" from="BuddhaTimer" to="." method="_on_buddha_timer_timeout"]

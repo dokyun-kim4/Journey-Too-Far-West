@@ -5,7 +5,9 @@ signal karma_activate
 
 const MIN_SPAWN_TIME = 2.0
 const MAX_SPAWN_TIME = 5.0
-const MAX_MOBS = 1
+const MAX_MOBS = 10
+const KARMA_MAX = 10
+
 var mob_count = 0
 var killed = 0
 var karma_kill = 0
@@ -13,9 +15,12 @@ var karma_kill = 0
 var car_activate = false
 var stage_clear = false
 
+var buddha_hand
+
 func _ready():
 	%Car.hide()
 	%CityName.show()
+	#%BrooklynPlayer.karma_used.connect(_on_karma_used())
 
 func _physics_process(delta):
 	if car_activate == true and stage_clear == true:
@@ -23,7 +28,7 @@ func _physics_process(delta):
 			var next_scene = load("res://src/maps/dallas.tscn")
 			get_tree().change_scene_to_packed(next_scene)
 	
-	if karma_kill == 10:
+	if karma_kill == KARMA_MAX:
 		karma_activate.emit()
 
 func spawn_mob():
@@ -56,7 +61,15 @@ func _on_mob_dead():
 	if killed == MAX_MOBS:
 		%Car.show()
 		stage_clear = true
-		
-func _on_karma_used():
-	pass
+
+func _on_brooklyn_player_karma_used():
+	karma_kill = 0
+	buddha_hand = preload("res://src/effects/buddha_hand.tscn").instantiate()
+	buddha_hand.global_position = get_global_mouse_position()
+	add_child(buddha_hand)
+	%BuddhaTimer.start(5)
+
+func _on_buddha_timer_timeout():
+	%BuddhaTimer.stop()
+	remove_child(buddha_hand)
 	
