@@ -56,7 +56,6 @@ func _on_spawn_timer_timeout():
 
 func _on_mob_dead():
 	killed += 1
-	killed += 1
 	if karma_kill < KARMA_MAX:
 		karma_kill += 1
 		karma_inc.emit()

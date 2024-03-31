@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/maps/dallas.gd" id="1_dgcns"]
 [ext_resource type="PackedScene" uid="uid://rghfhjwvr3oi" path="res://src/maps/map_assets/dallas_tile.tscn" id="2_hooha"]
 [ext_resource type="FontFile" uid="uid://45vc1sryqawd" path="res://src/maps/map_assets/DallasFont.ttf" id="3_eqndm"]
-[ext_resource type="Texture2D" uid="uid://drni8kya8ufs7" path="res://sprites/props/exit_car.png" id="4_1qipa"]
+[ext_resource type="Texture2D" uid="uid://c0ymv8820etes" path="res://sprites/props/exit_car.png" id="4_1qipa"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_peklx"]
 [ext_resource type="PackedScene" uid="uid://iacqgbevby6i" path="res://src/effects/buddha_button.tscn" id="6_5quww"]
 
