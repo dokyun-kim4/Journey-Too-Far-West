@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnjww0a83hxl7"]
+
+[ext_resource type="AudioStream" uid="uid://jwbdimknqcml" path="res://sfx/title_screen_song.wav" id="1_m60so"]
+
+[node name="TitleMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_m60so")
+autoplay = true

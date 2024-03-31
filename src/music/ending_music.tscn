@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci5bu6cvk88d8"]
+
+[ext_resource type="AudioStream" uid="uid://jwbdimknqcml" path="res://sfx/title_screen_song.wav" id="1_ghou2"]
+
+[node name="TitleMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ghou2")
+pitch_scale = 0.54
+autoplay = true

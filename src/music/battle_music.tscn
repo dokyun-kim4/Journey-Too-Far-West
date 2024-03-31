@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxsyndg4mmwi1"]
+
+[ext_resource type="AudioStream" uid="uid://cu10hb0odrgfo" path="res://sfx/in_game_music.wav" id="1_7mu8o"]
+
+[node name="BattleMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_7mu8o")
+autoplay = true
