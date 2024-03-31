@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://1guxskw1dde6" path="res://sprites/wukong/Buddha_Strike.png" id="3_68jhc"]
 [ext_resource type="Script" path="res://src/effects/BuddhaAnimation.gd" id="4_0j3tw"]
 [ext_resource type="Texture2D" uid="uid://ck4h0f3dalrin" path="res://sprites/wukong/Buddha_Strike_Imprint.png" id="5_rc7nt"]
-[ext_resource type="AudioStream" uid="uid://saibmiuiarmq" path="res://sfx/buddha_slam.wav" id="6_f7l7i"]
+[ext_resource type="AudioStream" uid="uid://b0lngaxgjkt5f" path="res://sfx/buddha_slam.wav" id="6_f7l7i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vro7x"]
 radius = 112.787
