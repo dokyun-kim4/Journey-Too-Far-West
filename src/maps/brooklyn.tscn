@@ -89,6 +89,7 @@ autostart = true
 
 [node name="BuddhaTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+one_shot = true
 
 [node name="ButtonTemp" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.2)
