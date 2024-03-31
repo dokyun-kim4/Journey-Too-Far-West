@@ -12,6 +12,8 @@ func _physics_process(delta):
 	if distance < REPEL:
 		direction = -direction
 		velocity = direction * 100.0
+	if velocity.length() > 0:
+		%Shooter.play()
 	move_and_slide()
 	
 func take_damage_mob():
