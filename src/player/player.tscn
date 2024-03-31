@@ -311,3 +311,9 @@ sprite_frames = SubResource("SpriteFrames_0vg8n")
 animation = &"walk_forward"
 frame_progress = 0.0181695
 script = ExtResource("6_ksf8a")
+
+[node name="SprintTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="SprintTimer" to="." method="_on_sprint_timer_timeout"]

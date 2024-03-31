@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bukibutmnhv44"]
+[gd_scene load_steps=8 format=3 uid="uid://bukibutmnhv44"]
 
 [ext_resource type="Script" path="res://src/maps/los_angeles.gd" id="1_1s7pi"]
 [ext_resource type="PackedScene" uid="uid://b06vcaxb1fa50" path="res://src/maps/map_assets/los_angeles_tile.tscn" id="2_f0fgf"]
 [ext_resource type="Texture2D" uid="uid://lhra0slbv1e3" path="res://sprites/car.png" id="3_nrdqg"]
+[ext_resource type="FontFile" uid="uid://dpxg1vaw660t" path="res://src/maps/map_assets/LosAngelesFont.ttf" id="3_wq0eu"]
 [ext_resource type="PackedScene" uid="uid://bj0t2lvjqi1n5" path="res://src/player/player.tscn" id="4_mgwaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lonv5"]
@@ -23,16 +24,18 @@ scale = Vector2(3.2, 3.2)
 
 [node name="CityName" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 253.0
-offset_top = 21.0
-offset_right = 962.0
-offset_bottom = 105.0
+offset_left = 64.0
+offset_top = 297.0
+offset_right = 1076.0
+offset_bottom = 373.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 61
+theme_override_fonts/font = ExtResource("3_wq0eu")
+theme_override_font_sizes/font_size = 52
 text = "Welcome to Los Angeles"
 
 [node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(-13, 385)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
 position = Vector2(92.5, 58)
@@ -50,6 +53,7 @@ offset_right = 119.0
 offset_bottom = 121.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "[Enter]"
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_mgwaw")]
 position = Vector2(1036, 590)
