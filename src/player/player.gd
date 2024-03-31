@@ -53,7 +53,8 @@ func _on_brooklyn_karma_activate():
 	karma_enabled = true
 	
 func take_damage():
-	health -= 1
+	health -= 0.1
+	%HealthBar.value = health
 	
 	if health == 0:
 		player_dead.emit()

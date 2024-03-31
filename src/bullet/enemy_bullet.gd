@@ -1,6 +1,6 @@
 extends Area2D
 
-const BULLET_SPEED = 1000
+const BULLET_SPEED = 300
 const BULLET_RANGE = 1200
 var travelled_dist = 0;
 
@@ -14,5 +14,5 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	print("shot!")
 	queue_free()
-	if body.has_method("take_damage_player"):
-		body.take_damage_player()
+	if body.has_method("take_damage"):
+		body.take_damage()
