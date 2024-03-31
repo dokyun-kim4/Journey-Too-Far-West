@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ck4h0f3dalrin" path="res://sprites/wukong/Buddha_Strike_Imprint.png" id="5_rc7nt"]
 [ext_resource type="AudioStream" uid="uid://b0lngaxgjkt5f" path="res://sfx/buddha_slam.wav" id="6_f7l7i"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vro7x"]
-radius = 112.787
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_00rtt"]
+radius = 59.5
+height = 197.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhgq0"]
 atlas = ExtResource("3_68jhc")
@@ -95,23 +96,23 @@ texture = ExtResource("1_es0v4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
-shape = SubResource("CircleShape2D_vro7x")
+shape = SubResource("CapsuleShape2D_00rtt")
 
 [node name="BuddhaAnimation" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 texture_filter = 1
-position = Vector2(1.00001, 0)
+position = Vector2(5, -7)
 scale = Vector2(4.36719, 4.36719)
 sprite_frames = SubResource("SpriteFrames_l8sdt")
 animation = &"hand_slam"
-frame_progress = 0.990245
+frame_progress = 0.719077
 script = ExtResource("4_0j3tw")
 
 [node name="BuddhaStrikeImprint" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 visible = false
 texture_filter = 1
-position = Vector2(-3, 9)
+position = Vector2(5, -7)
 scale = Vector2(2.86719, 2.86719)
 texture = ExtResource("5_rc7nt")
 
