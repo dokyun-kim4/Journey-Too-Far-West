@@ -9,14 +9,16 @@ func _physics_process(delta):
 	if targets_in_range.size() > 0:
 		var cur_target = targets_in_range[0]
 		look_at(cur_target.global_position)
-		print(cur_target)
+		%EnemyShoot.start(0.005)
 	
 func shoot():
-	var new_bullet = preload("res://src/bullet/bullet.tscn").instantiate()
+	var new_bullet = preload("res://src/bullet/enemy_bullet.tscn").instantiate()
 	new_bullet.global_position = %ShootPoint.global_position
 	new_bullet.global_rotation = %ShootPoint.global_rotation
+	print("!")
 	%ShootPoint.add_child(new_bullet)
 
-func _on_shoot_timer_timeout():
+
+func _on_enemy_shoot_timeout():
 	shoot()
-	%ShootTimer.stop()
+	%EnemyShoot.stop()
