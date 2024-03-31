@@ -69,8 +69,8 @@ func _on_player_karma_used():
 	buddha_hand.global_position = get_global_mouse_position()
 	add_child(buddha_hand)
 	%LABuddhaTimer.start()
-	%LABuddhaTimer.wait_time = 1
+	%LABuddhaTimer.wait_time = 10
 
-func _on_la_buddha_timer_timeout():
-	if is_instance_valid(buddha_hand):
-		buddha_hand.queue_free()
+#func _on_la_buddha_timer_timeout():
+	#if is_instance_valid(buddha_hand):
+		#buddha_hand.queue_free()

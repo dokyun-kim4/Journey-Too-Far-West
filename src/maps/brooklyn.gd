@@ -72,7 +72,7 @@ func _on_brooklyn_player_karma_used():
 	%BuddhaTimer.start()
 	%BuddhaTimer.wait_time = 1
 
-func _on_buddha_timer_timeout():
-	if is_instance_valid(buddha_hand):
-		buddha_hand.queue_free()
+#func _on_buddha_timer_timeout():
+	#if is_instance_valid(buddha_hand):
+		#buddha_hand.queue_free()
 	

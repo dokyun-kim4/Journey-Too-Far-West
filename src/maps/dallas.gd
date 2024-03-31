@@ -72,6 +72,6 @@ func _on_player_karma_used():
 	%DallasBuddhaTimer.start()
 	%DallasBuddhaTimer.wait_time = 1
 
-func _on_dallas_buddha_timer_timeout():
-	if is_instance_valid(buddha_hand):
-		buddha_hand.queue_free()
+#func _on_dallas_buddha_timer_timeout():
+	#if is_instance_valid(buddha_hand):
+		#buddha_hand.queue_free()

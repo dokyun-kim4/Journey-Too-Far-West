@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddbtrv4xsrfeb" path="res://sprites/mobs/explosion.png" id="1_dcj0t"]
 
 [node name="Explosion" type="CharacterBody2D"]
+z_index = -1
 position = Vector2(62, -1)
 
 [node name="Explosion" type="Sprite2D" parent="."]
