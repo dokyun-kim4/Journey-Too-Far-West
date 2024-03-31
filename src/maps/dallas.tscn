@@ -29,15 +29,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 61
 text = "Welcome to Dallas"
 
-[node name="Player" parent="." instance=ExtResource("4_peklx")]
-position = Vector2(1059, 590)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-limit_left = 0
-limit_top = 0
-limit_right = 1152
-limit_bottom = 648
-
 [node name="Car" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
@@ -50,6 +41,15 @@ texture = ExtResource("2_r2gj2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
 position = Vector2(104.5, 577)
 shape = SubResource("RectangleShape2D_8atf8")
+
+[node name="Player" parent="." instance=ExtResource("4_peklx")]
+position = Vector2(1059, 590)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_7xmie")
