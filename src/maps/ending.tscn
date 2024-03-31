@@ -10,7 +10,7 @@
 position = Vector2(3636, -460)
 scale = Vector2(3.2, 3.2)
 
-[node name="Label" type="Label" parent="."]
+[node name="Thankyou" type="Label" parent="."]
 texture_filter = 1
 offset_left = 178.0
 offset_top = 60.0
