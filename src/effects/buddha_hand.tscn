@@ -82,6 +82,7 @@ animations = [{
 }]
 
 [node name="BuddhaHand" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_83njv")
@@ -103,7 +104,7 @@ position = Vector2(1.00001, 0)
 scale = Vector2(4.36719, 4.36719)
 sprite_frames = SubResource("SpriteFrames_l8sdt")
 animation = &"hand_slam"
-frame_progress = 0.646371
+frame_progress = 0.990245
 script = ExtResource("4_0j3tw")
 
 [node name="BuddhaStrikeImprint" type="Sprite2D" parent="."]
@@ -116,5 +117,6 @@ texture = ExtResource("5_rc7nt")
 
 [node name="BuddhaSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_f7l7i")
+volume_db = 6.073
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

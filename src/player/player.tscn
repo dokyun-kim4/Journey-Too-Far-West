@@ -320,7 +320,7 @@ one_shot = true
 
 [node name="GunSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_dxd8d")
-volume_db = -10.0
+volume_db = -0.891
 
 [node name="WalkingSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_kt10w")
