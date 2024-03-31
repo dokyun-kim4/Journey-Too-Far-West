@@ -90,4 +90,13 @@ frame_progress = 0.642261
 unique_name_in_owner = true
 one_shot = true
 
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.807843)
+offset_left = 1005.0
+offset_top = 200.0
+offset_right = 1047.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 27
+text = "8/8"
+
 [connection signal="timeout" from="ButtonAnimationTimer" to="." method="_on_button_animation_timer_timeout"]

@@ -2,6 +2,7 @@ extends CanvasLayer
 
 var direction_up = true
 var can_move = true
+var format_string = "%s/8" 
 
 func _physics_process(delta):
 	if can_move:
@@ -14,6 +15,7 @@ func _physics_process(delta):
 			%ButtonAnimationTimer.start(0.5)
 			can_move = false
 		direction_up = !direction_up
+	$Label.text = format_string % %BuddhaButtonAnimation.frame
 
 func _on_brooklyn_karma_inc():
 	%BuddhaButtonAnimation.frame += 1
