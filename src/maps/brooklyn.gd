@@ -1,11 +1,14 @@
 # BROOKLYN SCRIPT
 extends Node2D
 
+signal karma_activate
+
 const MIN_SPAWN_TIME = 2.0
 const MAX_SPAWN_TIME = 5.0
 const MAX_MOBS = 2
 var mob_count = 0
 var killed = 0
+var karma_kill = 0
 
 var car_activate = false
 var stage_clear = false
@@ -19,6 +22,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("next_level"):
 			var next_scene = load("res://src/maps/dallas.tscn")
 			get_tree().change_scene_to_packed(next_scene)
+	
+	if karma_kill == 10:
+		karma_activate.emit()
 
 func spawn_mob():
 	var new_mob = preload("res://src/mobs/melee_mob.tscn").instantiate()
@@ -46,8 +52,13 @@ func _on_spawn_timer_timeout():
 
 func _on_mob_dead():
 	killed += 1
+	karma_kill += 1
 	if killed == MAX_MOBS:
 		%Car.show()
 		stage_clear = true
+		
+func _on_karma_used():
+	pass
+	
 
 

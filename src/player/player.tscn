@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://y4om2cfym24l" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_jtqr2"]
 [ext_resource type="Script" path="res://src/player/Wukong_Animations.gd" id="6_ksf8a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipn4q"]
-size = Vector2(44, 62.5)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85nlk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgxj0"]
 bg_color = Color(0.0901961, 0.623529, 0.2, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipn4q"]
+size = Vector2(44, 62.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fonwf"]
 radius = 24.0208
@@ -268,6 +268,17 @@ animations = [{
 collision_mask = 5
 script = ExtResource("1_qlmnk")
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -67.0
+offset_top = -90.0
+offset_right = 68.0
+offset_bottom = -74.0
+theme_override_styles/background = SubResource("StyleBoxFlat_85nlk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vgxj0")
+value = 100.0
+show_percentage = false
+
 [node name="WukongShadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.737255)
 position = Vector2(0, 17)
@@ -280,17 +291,6 @@ shape = SubResource("RectangleShape2D_ipn4q")
 [node name="Gun" parent="." instance=ExtResource("3_4wgbs")]
 position = Vector2(0, -11)
 rotation = -0.0396246
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
-offset_left = -67.0
-offset_top = -90.0
-offset_right = 68.0
-offset_bottom = -74.0
-theme_override_styles/background = SubResource("StyleBoxFlat_85nlk")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vgxj0")
-value = 100.0
-show_percentage = false
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
