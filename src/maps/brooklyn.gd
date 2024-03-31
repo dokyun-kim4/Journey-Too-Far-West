@@ -71,5 +71,5 @@ func _on_brooklyn_player_karma_used():
 	%BuddhaTimer.wait_time = 1
 
 func _on_buddha_timer_timeout():
-	remove_child(buddha_hand)
+	buddha_hand.queue_free()
 	

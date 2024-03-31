@@ -62,7 +62,7 @@ position = Vector2(1059, 590)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
 limit_top = 0
-limit_right = 1152
+limit_right = 1134
 limit_bottom = 648
 
 [node name="Path2D" type="Path2D" parent="."]

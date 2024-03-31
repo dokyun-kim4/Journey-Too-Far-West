@@ -18,6 +18,8 @@ point_count = 5
 script = ExtResource("1_1s7pi")
 
 [node name="TileMap" parent="." instance=ExtResource("2_f0fgf")]
+position = Vector2(3636, -460)
+scale = Vector2(3.2, 3.2)
 
 [node name="CityName" type="Label" parent="."]
 unique_name_in_owner = true
@@ -55,7 +57,7 @@ position = Vector2(1036, 590)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
 limit_top = 0
-limit_right = 1152
+limit_right = 1134
 limit_bottom = 648
 
 [node name="Path2D" type="Path2D" parent="."]

@@ -10,7 +10,7 @@
 position = Vector2(3636, -460)
 scale = Vector2(3.2, 3.2)
 
-[node name="Label" type="Label" parent="."]
+[node name="Thankyou" type="Label" parent="."]
 texture_filter = 1
 offset_left = 178.0
 offset_top = 60.0
@@ -20,6 +20,46 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6urun")
 theme_override_font_sizes/font_size = 100
 text = "Thank You For Playing!!!"
+
+[node name="Name1" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 231.0
+offset_right = 491.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6urun")
+theme_override_font_sizes/font_size = 70
+text = "Dexter F. -ARt"
+
+[node name="Name2" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 284.0
+offset_right = 491.0
+offset_bottom = 355.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6urun")
+theme_override_font_sizes/font_size = 70
+text = "Dokyun K. -Maps"
+
+[node name="Name3" type="Label" parent="."]
+offset_left = 66.0
+offset_top = 336.0
+offset_right = 491.0
+offset_bottom = 407.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6urun")
+theme_override_font_sizes/font_size = 70
+text = "Ellen S. -Player"
+
+[node name="Name4" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 388.0
+offset_right = 492.0
+offset_bottom = 459.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6urun")
+theme_override_font_sizes/font_size = 70
+text = "Jun P. -Enemies"
 
 [node name="Player" parent="." instance=ExtResource("3_0lly8")]
 position = Vector2(575, 565)
