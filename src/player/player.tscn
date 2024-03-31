@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://bj0t2lvjqi1n5"]
+[gd_scene load_steps=44 format=3 uid="uid://bj0t2lvjqi1n5"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_qlmnk"]
 [ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="2_vvsa1"]
 [ext_resource type="PackedScene" uid="uid://bxv12h3jfs1fb" path="res://src/gun/gun.tscn" id="3_4wgbs"]
 [ext_resource type="Texture2D" uid="uid://bsuo4g5v1d811" path="res://sprites/wukong/Wukong_Full_Anim.png" id="5_jtqr2"]
+[ext_resource type="AudioStream" uid="uid://bkb1gavof0ma6" path="res://sfx/gun_shoot.mp3" id="6_dxd8d"]
 [ext_resource type="Script" path="res://src/player/Wukong_Animations.gd" id="6_ksf8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85nlk"]
@@ -315,5 +316,9 @@ script = ExtResource("6_ksf8a")
 [node name="SprintTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="GunSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dxd8d")
+volume_db = -10.0
 
 [connection signal="timeout" from="SprintTimer" to="." method="_on_sprint_timer_timeout"]

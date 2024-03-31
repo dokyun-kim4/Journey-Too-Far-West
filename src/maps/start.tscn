@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://q36jmet8kwi3"]
 
 [ext_resource type="Script" path="res://src/maps/start.gd" id="1_0fpax"]
-[ext_resource type="PackedScene" uid="uid://si8x0dth8a8" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
+[ext_resource type="PackedScene" path="res://src/maps/map_assets/ending_tile.tscn" id="2_bk0kt"]
 [ext_resource type="FontFile" uid="uid://53rqvhde40eb" path="res://src/maps/map_assets/EndingFont.ttf" id="3_07k8b"]
-[ext_resource type="Texture2D" uid="uid://bsuo4g5v1d811" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
+[ext_resource type="Texture2D" uid="uid://y4om2cfym24l" path="res://sprites/wukong/Wukong_Full_Anim.png" id="4_uwkmj"]
 [ext_resource type="Texture2D" uid="uid://bk7ncp0den0rx" path="res://sprites/wukong/Wukong_Shadow.png" id="5_0qa8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdtec"]
@@ -67,7 +67,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [node name="start" type="Node2D"]
@@ -136,6 +136,7 @@ offset_bottom = 40.0
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.466667, 0.466667, 0.466667, 1)
 position = Vector2(947.5, 282.75)
 scale = Vector2(2.96875, 1.65625)
 texture = ExtResource("5_0qa8r")
