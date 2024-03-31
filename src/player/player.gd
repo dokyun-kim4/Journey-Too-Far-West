@@ -23,10 +23,10 @@ func _physics_process(delta):
 	if sprint_enabled and Input.is_action_pressed("sprint"):
 		velocity = cur_facing * PLAYER_BASE_SPEED * SPRINT_MULTIPLIER
 		if %SprintTimer.time_left == 0:
-			%SprintTimer.start(4.0)
+			%SprintTimer.start(3.0)
 			
 		print(%SprintTimer.time_left)
-		if %SprintTimer.time_left < 3.5 or Input.is_action_just_released("sprint"):
+		if %SprintTimer.time_left < 2.5 or Input.is_action_just_released("sprint"):
 			sprint_enabled = false
 	else: 
 		velocity = direction * PLAYER_BASE_SPEED 
