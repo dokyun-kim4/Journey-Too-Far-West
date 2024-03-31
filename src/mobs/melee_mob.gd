@@ -28,7 +28,6 @@ func explosion():
 	mob_dead.emit()
 
 func take_damage_buddha():
-	print("OUCH")
 	health = 0
 	queue_free()
 	explosion()
